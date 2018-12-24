@@ -1,0 +1,10 @@
+CREATE TABLE score
+(
+	name varchar(10),
+	highScore int,
+	PRIMARY KEY(name)
+)
+/*
+The name implementation might take time but 
+maybe i can finish it before december is over
+*/
