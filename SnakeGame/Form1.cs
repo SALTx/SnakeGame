@@ -10,14 +10,18 @@ namespace SnakeGame
         private List<Snake> Snake = new List<Snake>();
         private Snake food = new Snake();
         string deathCause = "You died for some unknown reason";
-        //stores cause of death (hit wall or eat self)
-        public string difficulty = "easy";
-        //easy medium or hard, look at settings.cs to modify
+        
 
+        /*vars for snake*/
         public static Brush headColor = Brushes.DarkOliveGreen;
         public static Brush bodyColor = Brushes.DarkGreen;
         public static Brush foodColor = Brushes.Yellow;
-        //snake color
+        public static string snakeShape = "square";
+        public static string foodShape = "circle";
+        public static string difficulty = "easy";
+
+
+
 
         /*Custom cursor*/
         //Cursor snakeCursor = new Cursor("SnakeMain.cur");
@@ -29,11 +33,11 @@ namespace SnakeGame
         {
             InitializeComponent();
             //Default settings
-            //TODO: custom settings from .txt file i probably wont do it but it sounds fun
             new Settings(difficulty);
 
             //for starting the timer and setting the timer interval for tick
             GameTimer.Interval = 1000 / Settings.Speed;
+            //might implement a lag reduction if theres a performance issue
             GameTimer.Tick += UpdateScreen;
             GameTimer.Start();
 
@@ -46,8 +50,6 @@ namespace SnakeGame
 
             //Default settings
             new Settings(difficulty);
-            //easy medium or hard
-            //TODO: proper implementation
 
             Snake.Clear();
 
@@ -190,9 +192,14 @@ namespace SnakeGame
         private void EatFood()
         {
             //For adding circle to snake's body on eating the food
-            Snake circle = new Snake { X = Snake[Snake.Count - 1].X, Y = Snake[Snake.Count - 1].Y };
-            Snake.Add(circle);
+            Snake snake = new Snake {
+                X = Snake[Snake.Count - 1].X,
+                Y = Snake[Snake.Count - 1].Y,
+                //testing
 
+                
+            };
+            Snake.Add(snake);
             //for updating the score
             Settings.Score += Settings.Points;
             score_l.Text = Settings.Score.ToString();
@@ -213,19 +220,23 @@ namespace SnakeGame
                 {
                     Brush SnakeColour;
 
-
+                    
                     if (i == 0)
                         SnakeColour = headColor;        //For snake head
                     else
                         SnakeColour = bodyColor;             //For rest of snake's body
 
                     //For drawing the snake
-                    draw.FillEllipse(SnakeColour,
-                        new Rectangle(Snake[i].X * Settings.Width, Snake[i].Y * Settings.Height, Settings.Width, Settings.Height));
+                    if(snakeShape == "circle")
+                        draw.FillEllipse(SnakeColour, new Rectangle(Snake[i].X * Settings.Width, Snake[i].Y * Settings.Height, Settings.Width, Settings.Height));
+                    else if(snakeShape ==  "square")
+                        draw.FillRectangle(SnakeColour, new Rectangle(Snake[i].X * Settings.Width, Snake[i].Y * Settings.Height, Settings.Width, Settings.Height));
 
                     //For drawing the food
-                    draw.FillEllipse(foodColor,
-                        new Rectangle(food.X * Settings.Width, food.Y * Settings.Height, Settings.Width, Settings.Height));
+                    if(foodShape == "circle")
+                        draw.FillEllipse(foodColor, new Rectangle(food.X * Settings.Width, food.Y * Settings.Height, Settings.Width, Settings.Height));
+                    else if(foodShape == "square")
+                        draw.FillRectangle(foodColor, new Rectangle(food.X * Settings.Width, food.Y * Settings.Height, Settings.Width, Settings.Height));
                 }
             }
 

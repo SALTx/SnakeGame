@@ -3298,6 +3298,9 @@
   <data name="&gt;&gt;controlsbox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;fileToolStripMenuItem.Name" xml:space="preserve">
+    <value>fileToolStripMenuItem</value>
+  </data>
   <data name="&gt;&gt;status_l.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -3333,6 +3336,14 @@
   </data>
   <data name="controlsbox.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Arrow Keys - Move around
+Spacebar - Pause
+Esc - Quit
+? - godmode
+
+</value>
   </data>
   <data name="status_l.Location" type="System.Drawing.Point, System.Drawing">
     <value>26, 162</value>
@@ -3454,9 +3465,6 @@
   <data name="&gt;&gt;status_l.Name" xml:space="preserve">
     <value>status_l</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Snake Game Classic</value>
-  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -3484,8 +3492,8 @@
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;canvas.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe Print, 14.25pt, style=Bold</value>
@@ -3550,8 +3558,8 @@
   <data name="highscoreLBL.Text" xml:space="preserve">
     <value>label4</value>
   </data>
-  <data name="&gt;&gt;fileToolStripMenuItem.Name" xml:space="preserve">
-    <value>fileToolStripMenuItem</value>
+  <data name="&gt;&gt;canvas.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="canvas.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -3566,19 +3574,11 @@
   <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
     <value>menuStrip1</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Arrow Keys - Move around
-Spacebar - Pause
-Esc - Quit
-? - godmode
-
-</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Snake Game Classic</value>
   </data>
   <data name="status_l.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;highscoreTag.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
@@ -3592,8 +3592,8 @@ Esc - Quit
   <data name="&gt;&gt;highscoreTag.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+  <data name="&gt;&gt;highscoreTag.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>634, 511</value>

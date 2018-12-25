@@ -40,6 +40,7 @@ namespace SnakeGame
                     Points = 50;
                     break;
             }
+            Score = 0;
             Width = 16;
             Height = 16;
             IsGameOver = false;
