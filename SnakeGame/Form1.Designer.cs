@@ -44,6 +44,7 @@
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlsbox = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.PauseTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.controlsbox.SuspendLayout();
@@ -91,35 +92,35 @@
             // 
             // menuStrip1
             // 
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
-            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingsToolStripMenuItem,
             this.quitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             // 
             // settingsToolStripMenuItem
             // 
-            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // quitToolStripMenuItem
             // 
-            resources.ApplyResources(this.quitToolStripMenuItem, "quitToolStripMenuItem");
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
+            resources.ApplyResources(this.quitToolStripMenuItem, "quitToolStripMenuItem");
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
             // controlsbox
             // 
-            resources.ApplyResources(this.controlsbox, "controlsbox");
             this.controlsbox.Controls.Add(this.label3);
+            resources.ApplyResources(this.controlsbox, "controlsbox");
             this.controlsbox.Name = "controlsbox";
             this.controlsbox.TabStop = false;
             // 
@@ -175,6 +176,7 @@
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.Timer GameTimer;
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
+        private System.Windows.Forms.Timer PauseTimer;
     }
 }
 

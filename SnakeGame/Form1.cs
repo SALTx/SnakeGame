@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Media;
 
 namespace SnakeGame
 {
@@ -10,7 +11,9 @@ namespace SnakeGame
         private List<Snake> Snake = new List<Snake>();
         private Snake food = new Snake();
         string deathCause = "You died for some unknown reason";
-        
+
+        //sounds
+        System.Media.SoundPlayer crunch = new System.Media.SoundPlayer(Resource1.crunch);
 
         /*vars for snake*/
         public static Brush headColor = Brushes.DarkOliveGreen;
@@ -37,9 +40,12 @@ namespace SnakeGame
 
             //for starting the timer and setting the timer interval for tick
             GameTimer.Interval = 1000 / Settings.Speed;
-            //might implement a lag reduction if theres a performance issue
             GameTimer.Tick += UpdateScreen;
             GameTimer.Start();
+
+            //for starting the pause timer when the game is supposed to be paused
+            PauseTimer.Interval = 100 / Settings.Speed;
+            PauseTimer.Tick += PauseScreen;
 
             StartGame();
 
@@ -60,7 +66,13 @@ namespace SnakeGame
             score_l.Text = Settings.Score.ToString();
             CreateFood();
         }
-
+        private void PauseScreen(object sender, EventArgs e)
+        {
+            if (GameInput.PressedKey(Keys.Space)) {
+                GameTimer.Start();
+                PauseTimer.Stop();
+            }
+        }
         private void UpdateScreen(object sender, EventArgs e)
         {
             highscoreLBL.Text = Highscore.GetHighScore().ToString();
@@ -148,7 +160,7 @@ namespace SnakeGame
                     //eat food
                     if (Snake[0].X == food.X && Snake[0].Y == food.Y)
                     {
-                        //playsoundhere
+                        crunch.Play();
                         EatFood();
                     }
                 }
@@ -178,9 +190,9 @@ namespace SnakeGame
 
         private void GamePaused()
         {
-            //just testing, but it would be a good idea to change snake color or show paused
-            //label while the game is paused 
-            bodyColor = Brushes.Pink;
+            
+            PauseTimer.Start();
+            GameTimer.Stop();
         }
 
 
