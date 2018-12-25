@@ -7,8 +7,8 @@ namespace SnakeGame
 {
     public partial class Form1 : Form
     {
-        private List<Circle> Snake = new List<Circle>();
-        private Circle food = new Circle();
+        private List<Snake> Snake = new List<Snake>();
+        private Snake food = new Snake();
         string deathCause = "You died for some unknown reason";
         //stores cause of death (hit wall or eat self)
         public string difficulty = "easy";
@@ -51,7 +51,7 @@ namespace SnakeGame
 
             Snake.Clear();
 
-            Circle head = new Circle { X = 0, Y = 0 };
+            Snake head = new Snake { X = 0, Y = 0 };
             //default start for game
             Snake.Add(head);
 
@@ -168,7 +168,7 @@ namespace SnakeGame
             //pretty similar to javascript math lib
 
             //creating food object with random coordinates in the canvas
-            food = new Circle { X = rand.Next(0, MaxX), Y = rand.Next(0, MaxY) };
+            food = new Snake { X = rand.Next(0, MaxX), Y = rand.Next(0, MaxY) };
 
         }
 
@@ -190,7 +190,7 @@ namespace SnakeGame
         private void EatFood()
         {
             //For adding circle to snake's body on eating the food
-            Circle circle = new Circle { X = Snake[Snake.Count - 1].X, Y = Snake[Snake.Count - 1].Y };
+            Snake circle = new Snake { X = Snake[Snake.Count - 1].X, Y = Snake[Snake.Count - 1].Y };
             Snake.Add(circle);
 
             //for updating the score
