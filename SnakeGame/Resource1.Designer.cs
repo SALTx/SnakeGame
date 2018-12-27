@@ -68,5 +68,14 @@ namespace SnakeGame {
                 return ResourceManager.GetStream("crunch", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream The_Game_Over_1 {
+            get {
+                return ResourceManager.GetStream("The_Game_Over_1", resourceCulture);
+            }
+        }
     }
 }

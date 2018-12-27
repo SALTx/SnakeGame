@@ -3604,8 +3604,11 @@ Esc - Quit
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 </value>
   </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value> </value>
+    <value> Snake Game</value>
   </data>
   <data name="&gt;&gt;GameTimer.Name" xml:space="preserve">
     <value>GameTimer</value>

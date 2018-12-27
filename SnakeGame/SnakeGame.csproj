@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enemies.cs" />
+    <Compile Include="Powerup.cs" />
     <Compile Include="Resource1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -121,6 +123,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\crunch.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\The_Game_Over_1.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

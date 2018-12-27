@@ -8,12 +8,18 @@ namespace SnakeGame
 {
     public partial class Form1 : Form
     {
+        /*
+         for future reference the pause is implemented really badly
+         it starts a new clocktimer called pausetimer and stops gametimer so i can (draw) the spacebar to unpause
+         very badly implemented plsfix
+        */
         private List<Snake> Snake = new List<Snake>();
         private Snake food = new Snake();
         string deathCause = "You died for some unknown reason";
 
         //sounds
         System.Media.SoundPlayer crunch = new System.Media.SoundPlayer(Resource1.crunch);
+        System.Media.SoundPlayer die = new System.Media.SoundPlayer(Resource1.The_Game_Over_1);
 
         /*vars for snake*/
         public static Brush headColor = Brushes.DarkOliveGreen;
@@ -22,7 +28,6 @@ namespace SnakeGame
         public static string snakeShape = "square";
         public static string foodShape = "circle";
         public static string difficulty = "easy";
-
 
 
 
@@ -48,6 +53,8 @@ namespace SnakeGame
             PauseTimer.Tick += PauseScreen;
 
             StartGame();
+
+            //i want to play a sound when the game starts
 
         }
         private void StartGame()
@@ -106,6 +113,7 @@ namespace SnakeGame
                 else if (GameInput.PressedKey(Keys.Space))
                     GamePaused();
 
+
                 MoveSnake();
             }
 
@@ -143,6 +151,7 @@ namespace SnakeGame
                     if (Snake[i].X >= MaxX || Snake[i].Y >= MaxY || Snake[i].X < 0 || Snake[i].Y < 0)
                     {
                         deathCause = "You touched the wall";
+                        die.Play();
                         GameOver();
 
                     }
@@ -153,6 +162,7 @@ namespace SnakeGame
                         if (Snake[i].X == Snake[k].X && Snake[i].Y == Snake[k].Y)
                         {
                             deathCause = "You ate yourself";
+                            die.Play();
                             GameOver();
                         }
                     }
@@ -239,15 +249,22 @@ namespace SnakeGame
                         SnakeColour = bodyColor;             //For rest of snake's body
 
                     //For drawing the snake
-                    if(snakeShape == "circle")
+                    if (snakeShape == "circle")
                         draw.FillEllipse(SnakeColour, new Rectangle(Snake[i].X * Settings.Width, Snake[i].Y * Settings.Height, Settings.Width, Settings.Height));
-                    else if(snakeShape ==  "square")
+                    else if (snakeShape == "square")
                         draw.FillRectangle(SnakeColour, new Rectangle(Snake[i].X * Settings.Width, Snake[i].Y * Settings.Height, Settings.Width, Settings.Height));
 
+                    //TODO: Give the food better design
                     //For drawing the food
-                    if(foodShape == "circle")
+                    if (foodShape == "circle")
+                    {
                         draw.FillEllipse(foodColor, new Rectangle(food.X * Settings.Width, food.Y * Settings.Height, Settings.Width, Settings.Height));
-                    else if(foodShape == "square")
+                        draw.FillEllipse(Brushes.Black, new Rectangle(food.X * Settings.Width + (Settings.Width/2), food.Y * Settings.Height + (Settings.Width / 2), Settings.Width / 3, Settings.Height / 3));
+                        draw.FillEllipse(Brushes.Black, new Rectangle(food.X * Settings.Width, food.Y * Settings.Height + (Settings.Width / 2), Settings.Width / 3, Settings.Height / 3));
+                        draw.FillEllipse(Brushes.Black, new Rectangle(food.X * Settings.Width + (Settings.Width / 2), food.Y * Settings.Height, Settings.Width / 3, Settings.Height / 3));
+                        draw.FillEllipse(Brushes.Black, new Rectangle(food.X * Settings.Width, food.Y * Settings.Height, Settings.Width / 3, Settings.Height / 3));
+                    }
+                    else if (foodShape == "square")
                         draw.FillRectangle(foodColor, new Rectangle(food.X * Settings.Width, food.Y * Settings.Height, Settings.Width, Settings.Height));
                 }
             }

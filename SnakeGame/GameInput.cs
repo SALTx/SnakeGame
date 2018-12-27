@@ -20,5 +20,15 @@ namespace SnakeGame
         {
             return (KeyTable[key] == null) ? false : (bool)KeyTable[key] ;
         }
+
+        public static bool DepressedKey(Keys key)
+        {
+            return (KeyTable[key] != null) ? true : (bool)KeyTable[key];
+        }
+        /*
+         This is what a bad idea looks like
+         for future reference i was trying to see if i could use a value from the hashtable to either be
+         truthy or falsy but i guess not
+         */
     }
 }
