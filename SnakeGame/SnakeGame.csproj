@@ -125,6 +125,10 @@
     <None Include="Resources\crunch.wav" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\grassBG.jpg" />
+    <None Include="Resources\grassBackground.jpg" />
+    <None Include="Resources\background-01-01.jpg" />
+    <None Include="Resources\background-01.jpg" />
     <Content Include="Resources\The_Game_Over_1.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

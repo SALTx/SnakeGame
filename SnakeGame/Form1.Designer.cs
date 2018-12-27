@@ -45,16 +45,20 @@
             this.controlsbox = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.PauseTimer = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.controlsbox.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // canvas
             // 
             resources.ApplyResources(this.canvas, "canvas");
-            this.canvas.BackColor = System.Drawing.Color.Gray;
+            this.canvas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.canvas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.canvas.Cursor = System.Windows.Forms.Cursors.Default;
             this.canvas.Name = "canvas";
             this.canvas.TabStop = false;
             this.canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.canvas_Paint);
@@ -62,6 +66,7 @@
             // status_l
             // 
             resources.ApplyResources(this.status_l, "status_l");
+            this.status_l.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.status_l.Name = "status_l";
             // 
             // score_l
@@ -92,6 +97,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
@@ -129,18 +135,31 @@
             resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.highscoreTag);
+            this.panel1.Controls.Add(this.controlsbox);
+            this.panel1.Controls.Add(this.score_l);
+            this.panel1.Controls.Add(this.highscoreLBL);
+            this.panel1.Controls.Add(this.label1);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.Controls.Add(this.controlsbox);
-            this.Controls.Add(this.highscoreLBL);
-            this.Controls.Add(this.highscoreTag);
+            this.BackgroundImage = global::SnakeGame.Resource1.background_01_01;
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.score_l);
             this.Controls.Add(this.status_l);
             this.Controls.Add(this.canvas);
             this.Controls.Add(this.menuStrip1);
@@ -155,6 +174,8 @@
             this.menuStrip1.PerformLayout();
             this.controlsbox.ResumeLayout(false);
             this.controlsbox.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,6 +198,8 @@
         public System.Windows.Forms.Timer GameTimer;
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
         private System.Windows.Forms.Timer PauseTimer;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label4;
     }
 }
 

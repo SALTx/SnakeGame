@@ -240,6 +240,7 @@ namespace SnakeGame
                 //Draw snake's body 
                 for (int i = 0; i < Snake.Count; i++)
                 {
+                    //TODO: Add image implementation
                     Brush SnakeColour;
 
                     
@@ -259,10 +260,6 @@ namespace SnakeGame
                     if (foodShape == "circle")
                     {
                         draw.FillEllipse(foodColor, new Rectangle(food.X * Settings.Width, food.Y * Settings.Height, Settings.Width, Settings.Height));
-                        draw.FillEllipse(Brushes.Black, new Rectangle(food.X * Settings.Width + (Settings.Width/2), food.Y * Settings.Height + (Settings.Width / 2), Settings.Width / 3, Settings.Height / 3));
-                        draw.FillEllipse(Brushes.Black, new Rectangle(food.X * Settings.Width, food.Y * Settings.Height + (Settings.Width / 2), Settings.Width / 3, Settings.Height / 3));
-                        draw.FillEllipse(Brushes.Black, new Rectangle(food.X * Settings.Width + (Settings.Width / 2), food.Y * Settings.Height, Settings.Width / 3, Settings.Height / 3));
-                        draw.FillEllipse(Brushes.Black, new Rectangle(food.X * Settings.Width, food.Y * Settings.Height, Settings.Width / 3, Settings.Height / 3));
                     }
                     else if (foodShape == "square")
                         draw.FillRectangle(foodColor, new Rectangle(food.X * Settings.Width, food.Y * Settings.Height, Settings.Width, Settings.Height));
@@ -290,7 +287,7 @@ namespace SnakeGame
         {
             GameInput.ChangeState(e.KeyCode, true);
         }
-
+        //i dont think keyUP works
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
             GameInput.ChangeState(e.KeyCode, false);
