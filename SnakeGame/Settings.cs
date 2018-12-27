@@ -10,6 +10,13 @@ namespace SnakeGame
         Left,
         Right
     };
+    //public enum Enemies
+    //{ 
+    //    Random, //moves randomly
+    //    Corner, //tries to corner the snake
+    //    Follow, //follows the snake
+    //    Ambush //tries to walk in front of the snake
+    //}
 
     public class Settings
     {
@@ -21,6 +28,7 @@ namespace SnakeGame
         public static bool IsGameOver { get; set; }
         public static bool IsGamePaused { get; set; }
         public static Direction InGameDirection { get; set; }
+        //public static Enemies enemeies { get; set; }
 
         public Settings(string difficulty)
         {
@@ -33,11 +41,11 @@ namespace SnakeGame
                     break;
                 case "medium":
                     Speed = 12;
-                    Points = 85;
+                    Points = 110;
                     break;
                 case "hard":
                     Speed = 16;
-                    Points = 50;
+                    Points = 120;
                     break;
             }
             Score = 0;
