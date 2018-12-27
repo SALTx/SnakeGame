@@ -10,13 +10,6 @@ namespace SnakeGame
         Left,
         Right
     };
-    //public enum Enemies
-    //{ 
-    //    Random, //moves randomly
-    //    Corner, //tries to corner the snake
-    //    Follow, //follows the snake
-    //    Ambush //tries to walk in front of the snake
-    //}
 
     public class Settings
     {
@@ -28,7 +21,10 @@ namespace SnakeGame
         public static bool IsGameOver { get; set; }
         public static bool IsGamePaused { get; set; }
         public static Direction InGameDirection { get; set; }
-        //public static Enemies enemeies { get; set; }
+        public static bool enemyEnabled { get; set; }
+        public static bool powerupEnabled { get; set; }
+        public static double enemySpawnRate { get; set; }
+        public static double powerupSpawnRate { get; set; }
 
         public Settings(string difficulty)
         {
@@ -38,14 +34,20 @@ namespace SnakeGame
                 case "easy":
                     Speed = 8;
                     Points = 100;
+                    enemySpawnRate = 0.2;
+                    powerupSpawnRate = 0.3;
                     break;
                 case "medium":
                     Speed = 12;
                     Points = 110;
+                    enemySpawnRate = 0.4;
+                    powerupSpawnRate = 0.6;
                     break;
                 case "hard":
                     Speed = 16;
                     Points = 120;
+                    enemySpawnRate = 0.6;
+                    powerupSpawnRate = 0.7;
                     break;
             }
             Score = 0;
@@ -53,6 +55,9 @@ namespace SnakeGame
             Height = 16;
             IsGameOver = false;
             InGameDirection = Direction.Right;
+            enemyEnabled = false;
+            powerupEnabled = false;
+            //by default both enemies and powerups are disabled
             //this will be the default direction in which the game starts with
         }
 

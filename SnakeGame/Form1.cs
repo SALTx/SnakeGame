@@ -25,16 +25,12 @@ namespace SnakeGame
         public static Brush headColor = Brushes.DarkOliveGreen;
         public static Brush bodyColor = Brushes.DarkGreen;
         public static Brush foodColor = Brushes.Yellow;
+
         public static string snakeShape = "square";
         public static string foodShape = "circle";
         public static string difficulty = "easy";
 
-
-
-        /*Custom cursor*/
-        //Cursor snakeCursor = new Cursor("SnakeMain.cur");
-        //Cursor.Current = Cursors.WaitCursor;
-        //idk how it works
+        public static string playerName = "Player 1";
 
 
         public Form1()
@@ -102,13 +98,13 @@ namespace SnakeGame
             }
             else
             {
-                if (GameInput.PressedKey(Keys.Right) && Settings.InGameDirection != Direction.Left)
+                if ((GameInput.PressedKey(Keys.Right) || (GameInput.PressedKey(Keys.D))) && Settings.InGameDirection != Direction.Left)
                     Settings.InGameDirection = Direction.Right;
-                else if (GameInput.PressedKey(Keys.Left) && Settings.InGameDirection != Direction.Right)
+                else if ((GameInput.PressedKey(Keys.Left) || (GameInput.PressedKey(Keys.A))) && Settings.InGameDirection != Direction.Right)
                     Settings.InGameDirection = Direction.Left;
-                else if (GameInput.PressedKey(Keys.Up) && Settings.InGameDirection != Direction.Down)
+                else if ((GameInput.PressedKey(Keys.Up) || (GameInput.PressedKey(Keys.W))) && Settings.InGameDirection != Direction.Down)
                     Settings.InGameDirection = Direction.Up;
-                else if (GameInput.PressedKey(Keys.Down) && Settings.InGameDirection != Direction.Up)
+                else if ((GameInput.PressedKey(Keys.Down) || (GameInput.PressedKey(Keys.S))) && Settings.InGameDirection != Direction.Up)
                     Settings.InGameDirection = Direction.Down;
                 else if (GameInput.PressedKey(Keys.Space))
                     GamePaused();
@@ -240,7 +236,7 @@ namespace SnakeGame
                 //Draw snake's body 
                 for (int i = 0; i < Snake.Count; i++)
                 {
-                    //TODO: Add image implementation
+                    //TODO: Add image implementation or different rendering methods
                     Brush SnakeColour;
 
                     
@@ -301,6 +297,11 @@ namespace SnakeGame
         private void quitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void profileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
