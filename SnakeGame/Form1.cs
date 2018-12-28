@@ -18,27 +18,26 @@ namespace SnakeGame
         string deathCause = "You died for some unknown reason";
 
         //sounds
-        System.Media.SoundPlayer crunch = new System.Media.SoundPlayer(Resource1.crunch);
-        System.Media.SoundPlayer die = new System.Media.SoundPlayer(Resource1.The_Game_Over_1);
+        System.Media.SoundPlayer crunch = new System.Media.SoundPlayer(Resources1.crunch);
+        System.Media.SoundPlayer die = new System.Media.SoundPlayer(Resources1.The_Game_Over_1);
 
         /*vars for snake*/
-        public static Brush headColor = Brushes.DarkOliveGreen;
-        public static Brush bodyColor = Brushes.DarkGreen;
-        public static Brush foodColor = Brushes.Yellow;
+        public static Brush headColor = Brushes.Orange;
+        public static Brush bodyColor = Brushes.Yellow;
+        public static Brush foodColor = Brushes.Purple;
 
-        public static string snakeShape = "square";
+        public static string snakeShape = "circle";
         public static string foodShape = "circle";
         public static string difficulty = "easy";
 
         public static string playerName = "Player 1";
-
 
         public Form1()
         {
             InitializeComponent();
             //Default settings
             new Settings(difficulty);
-
+            Highscore1.getScoresFromFile();
             //for starting the timer and setting the timer interval for tick
             GameTimer.Interval = 1000 / Settings.Speed;
             GameTimer.Tick += UpdateScreen;
@@ -108,6 +107,7 @@ namespace SnakeGame
                     Settings.InGameDirection = Direction.Down;
                 else if (GameInput.PressedKey(Keys.Space))
                     GamePaused();
+                //(()or())and()
 
 
                 MoveSnake();

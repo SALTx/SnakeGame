@@ -58,10 +58,10 @@
     <Compile Include="Profile.Designer.cs">
       <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Resource1.Designer.cs">
+    <Compile Include="Resources1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Resource1.resx</DependentUpon>
+      <DependentUpon>Resources1.resx</DependentUpon>
     </Compile>
     <Compile Include="Snake.cs" />
     <Compile Include="Form1.cs">
@@ -99,9 +99,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Resource1.resx">
+    <EmbeddedResource Include="Resources1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
@@ -139,6 +139,7 @@
     <None Include="Resources\grassBackground.jpg" />
     <None Include="Resources\background-01-01.jpg" />
     <None Include="Resources\background-01.jpg" />
+    <None Include="Resources\highscore.txt" />
     <Content Include="Resources\The_Game_Over_1.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

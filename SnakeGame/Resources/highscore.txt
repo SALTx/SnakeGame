@@ -1,0 +1,2 @@
+player1	100
+player2	50

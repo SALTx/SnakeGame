@@ -41,13 +41,13 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlsbox = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.PauseTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.controlsbox.SuspendLayout();
@@ -119,6 +119,12 @@
             resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
+            // profileToolStripMenuItem
+            // 
+            this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
+            resources.ApplyResources(this.profileToolStripMenuItem, "profileToolStripMenuItem");
+            this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click);
+            // 
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
@@ -152,19 +158,13 @@
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
             // 
-            // profileToolStripMenuItem
-            // 
-            this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            resources.ApplyResources(this.profileToolStripMenuItem, "profileToolStripMenuItem");
-            this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.BackgroundImage = global::SnakeGame.Resource1.background_01_01;
+            this.BackgroundImage = global::SnakeGame.Resources1.background_01_01;
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
@@ -173,7 +173,9 @@
             this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);

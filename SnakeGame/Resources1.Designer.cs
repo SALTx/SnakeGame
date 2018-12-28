@@ -22,14 +22,14 @@ namespace SnakeGame {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resource1 {
+    internal class Resources1 {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resource1() {
+        internal Resources1() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace SnakeGame {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SnakeGame.Resource1", typeof(Resource1).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SnakeGame.Resources1", typeof(Resources1).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -76,6 +76,36 @@ namespace SnakeGame {
         internal static System.IO.UnmanagedMemoryStream crunch {
             get {
                 return ResourceManager.GetStream("crunch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to player1	100
+        ///player2	50.
+        /// </summary>
+        internal static string highscore {
+            get {
+                return ResourceManager.GetString("highscore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon settings {
+            get {
+                object obj = ResourceManager.GetObject("settings", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon snake {
+            get {
+                object obj = ResourceManager.GetObject("snake", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         

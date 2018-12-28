@@ -38,4 +38,5 @@ C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\bin\Debug\SnakeGame.pdb
 C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\bin\Debug\en-SG\SnakeGame.resources.dll
 C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\en-SG\SnakeGame.resources.dll
 C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\SnakeGame.csproj.CopyComplete
-C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\SnakeGame.Resource1.resources
+C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\SnakeGame.Profile.resources
+C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\SnakeGame.Resources1.resources

@@ -47,7 +47,7 @@ namespace SnakeGame
                 result = Brushes.Green;
             else if (color == "Blue")
                 result = Brushes.Blue;
-            else if (color == "purple")
+            else if (color == "Purple")
                 result = Brushes.Purple;
             else
                 result = fallback;
@@ -57,6 +57,7 @@ namespace SnakeGame
         private void applyBTN_Click(object sender, EventArgs e)
         {
             //difficulty radio
+            string defaultDifficulty = Form1.difficulty;
             if (easyRadio.Checked)
                 Form1.difficulty = "easy";
             else if (mediumRadio.Checked)
@@ -64,7 +65,7 @@ namespace SnakeGame
             else if (hardRadio.Checked)
                 Form1.difficulty = "hard";
             else
-                Form1.difficulty = "easy";
+                Form1.difficulty = defaultDifficulty;
 
             //shapes
             if (snakeShapeCircle.Checked)

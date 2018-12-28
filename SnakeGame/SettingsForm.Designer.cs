@@ -30,7 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.appearanceGB = new System.Windows.Forms.GroupBox();
+            this.foodColorCB = new System.Windows.Forms.ComboBox();
+            this.bodyColorCB = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.headColorCB = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.applyBTN = new System.Windows.Forms.Button();
@@ -48,26 +51,23 @@
             this.hardRadio = new System.Windows.Forms.RadioButton();
             this.mediumRadio = new System.Windows.Forms.RadioButton();
             this.easyRadio = new System.Windows.Forms.RadioButton();
-            this.headColorCB = new System.Windows.Forms.ComboBox();
-            this.bodyColorCB = new System.Windows.Forms.ComboBox();
-            this.foodColorCB = new System.Windows.Forms.ComboBox();
             this.miscGB = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label6 = new System.Windows.Forms.Label();
             this.appearanceGB.SuspendLayout();
             this.shapeGB.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.difficultyGB.SuspendLayout();
             this.miscGB.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // appearanceGB
@@ -85,6 +85,24 @@
             this.appearanceGB.TabStop = false;
             this.appearanceGB.Text = "Colors";
             // 
+            // foodColorCB
+            // 
+            this.foodColorCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.foodColorCB.FormattingEnabled = true;
+            this.foodColorCB.Location = new System.Drawing.Point(72, 86);
+            this.foodColorCB.Name = "foodColorCB";
+            this.foodColorCB.Size = new System.Drawing.Size(121, 21);
+            this.foodColorCB.TabIndex = 7;
+            // 
+            // bodyColorCB
+            // 
+            this.bodyColorCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.bodyColorCB.FormattingEnabled = true;
+            this.bodyColorCB.Location = new System.Drawing.Point(72, 59);
+            this.bodyColorCB.Name = "bodyColorCB";
+            this.bodyColorCB.Size = new System.Drawing.Size(121, 21);
+            this.bodyColorCB.TabIndex = 6;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -93,6 +111,15 @@
             this.label4.Size = new System.Drawing.Size(61, 13);
             this.label4.TabIndex = 4;
             this.label4.Text = "Food Color:";
+            // 
+            // headColorCB
+            // 
+            this.headColorCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.headColorCB.FormattingEnabled = true;
+            this.headColorCB.Location = new System.Drawing.Point(73, 29);
+            this.headColorCB.Name = "headColorCB";
+            this.headColorCB.Size = new System.Drawing.Size(121, 21);
+            this.headColorCB.TabIndex = 5;
             // 
             // label2
             // 
@@ -257,41 +284,12 @@
             // easyRadio
             // 
             this.easyRadio.AutoSize = true;
-            this.easyRadio.Checked = true;
             this.easyRadio.Location = new System.Drawing.Point(6, 25);
             this.easyRadio.Name = "easyRadio";
             this.easyRadio.Size = new System.Drawing.Size(48, 17);
             this.easyRadio.TabIndex = 0;
-            this.easyRadio.TabStop = true;
             this.easyRadio.Text = "Easy";
             this.easyRadio.UseVisualStyleBackColor = true;
-            // 
-            // headColorCB
-            // 
-            this.headColorCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.headColorCB.FormattingEnabled = true;
-            this.headColorCB.Location = new System.Drawing.Point(73, 29);
-            this.headColorCB.Name = "headColorCB";
-            this.headColorCB.Size = new System.Drawing.Size(121, 21);
-            this.headColorCB.TabIndex = 5;
-            // 
-            // bodyColorCB
-            // 
-            this.bodyColorCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.bodyColorCB.FormattingEnabled = true;
-            this.bodyColorCB.Location = new System.Drawing.Point(72, 59);
-            this.bodyColorCB.Name = "bodyColorCB";
-            this.bodyColorCB.Size = new System.Drawing.Size(121, 21);
-            this.bodyColorCB.TabIndex = 6;
-            // 
-            // foodColorCB
-            // 
-            this.foodColorCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.foodColorCB.FormattingEnabled = true;
-            this.foodColorCB.Location = new System.Drawing.Point(72, 86);
-            this.foodColorCB.Name = "foodColorCB";
-            this.foodColorCB.Size = new System.Drawing.Size(121, 21);
-            this.foodColorCB.TabIndex = 7;
             // 
             // miscGB
             // 
@@ -303,54 +301,6 @@
             this.miscGB.TabIndex = 5;
             this.miscGB.TabStop = false;
             this.miscGB.Text = "Misc";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(22, 2);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Enemies";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 2);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 13);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Power Ups";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(5, 18);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(39, 17);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.Text = "On";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(50, 18);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(39, 17);
-            this.radioButton2.TabIndex = 3;
-            this.radioButton2.Text = "Off";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.radioButton1);
-            this.panel3.Controls.Add(this.radioButton2);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Location = new System.Drawing.Point(25, 16);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(92, 40);
-            this.panel3.TabIndex = 6;
             // 
             // panel4
             // 
@@ -382,6 +332,54 @@
             this.radioButton6.Text = "Off";
             this.radioButton6.UseVisualStyleBackColor = true;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(17, 2);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(59, 13);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Power Ups";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.radioButton1);
+            this.panel3.Controls.Add(this.radioButton2);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Location = new System.Drawing.Point(25, 16);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(92, 40);
+            this.panel3.TabIndex = 6;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(5, 18);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(39, 17);
+            this.radioButton1.TabIndex = 2;
+            this.radioButton1.Text = "On";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(50, 18);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(39, 17);
+            this.radioButton2.TabIndex = 3;
+            this.radioButton2.Text = "Off";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(22, 2);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Enemies";
+            // 
             // SettingsForm
             // 
             this.AcceptButton = this.applyBTN;
@@ -410,10 +408,10 @@
             this.difficultyGB.ResumeLayout(false);
             this.difficultyGB.PerformLayout();
             this.miscGB.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
