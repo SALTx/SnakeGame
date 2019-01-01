@@ -5,16 +5,6 @@ namespace SnakeGame
     //To store the High Score
     class Highscore
     {
-        /*
-         --NEW TABLE
-        CREATE TABLE score (
-            highscore varchar(10),
-            name varchar(10)
-        )
-        */
-        //New table stores name as well as the score associated with that name
-        //SQLiteCommand cmd = new SQLiteCommand("SELECT highscore FROM highscore WHERE name = *put name here*", sqlcon);
-        //changed variable name to Conn from sqlcommand replace all later
         public static int GetHighScore()
         {
             int score = 0;
@@ -41,7 +31,7 @@ namespace SnakeGame
                 //open the database
                 Conn.Open();
                 cmd.ExecuteNonQuery();
-
+                //close conection
                 Conn.Close();
             }
 
@@ -66,7 +56,6 @@ namespace SnakeGame
 
         //Checks whether the current score is the new high score or not
         //if the current score is the new High Score then Updates the High Score in database
-        //TODO: Implement anticheat
         public static bool SetHighScore(int score)
         {
             int highScore = GetHighScore();
@@ -79,6 +68,7 @@ namespace SnakeGame
                 //open the database
                 Conn.Open();
                 cmd.ExecuteNonQuery();
+                //close conection
                 Conn.Close();
                 return true;
             }

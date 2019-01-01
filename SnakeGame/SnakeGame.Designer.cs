@@ -1,6 +1,6 @@
 ﻿namespace SnakeGame
 {
-    partial class Form1
+    partial class SnakeGame
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SnakeGame));
             this.canvas = new System.Windows.Forms.PictureBox();
             this.status_l = new System.Windows.Forms.Label();
             this.score_l = new System.Windows.Forms.Label();

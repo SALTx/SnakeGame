@@ -12,7 +12,7 @@ namespace SnakeGame
         public int X { get; set; }
         public int Y { get; set; }
         public int difficulty { get; set; }
-        //i still need a way to constrain the enemy to the board
+        //i still to constrain the enemy to the board
 
 
         public void randomMove()

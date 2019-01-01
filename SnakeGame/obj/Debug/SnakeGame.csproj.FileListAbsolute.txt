@@ -24,10 +24,8 @@ C:\Users\Saahil\Desktop\Snake-Game-master\bin\Debug\en-SG\SnakeGame.resources.dl
 C:\Users\Saahil\Desktop\Snake-Game-master\obj\Debug\SnakeGame.Form1.en-SG.resources
 C:\Users\Saahil\Desktop\Snake-Game-master\obj\Debug\en-SG\SnakeGame.resources.dll
 C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\SnakeGame.csprojAssemblyReference.cache
-C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\SnakeGame.Form1.resources
 C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\SnakeGame.Properties.Resources.resources
 C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\SnakeGame.SettingsForm.resources
-C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\SnakeGame.Form1.en-SG.resources
 C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\SnakeGame.csproj.GenerateResource.cache
 C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\SnakeGame.csproj.CoreCompileInputs.cache
 C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\SnakeGame.exe
@@ -40,3 +38,5 @@ C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\en-SG\SnakeGame.r
 C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\SnakeGame.csproj.CopyComplete
 C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\SnakeGame.Profile.resources
 C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\SnakeGame.Resources1.resources
+C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\SnakeGame.SnakeGame.resources
+C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\SnakeGame.SnakeGame.en-SG.resources

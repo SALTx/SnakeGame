@@ -57,31 +57,31 @@ namespace SnakeGame
         private void applyBTN_Click(object sender, EventArgs e)
         {
             //difficulty radio
-            string defaultDifficulty = Form1.difficulty;
+            string defaultDifficulty = SnakeGame.difficulty;
             if (easyRadio.Checked)
-                Form1.difficulty = "easy";
+                SnakeGame.difficulty = "easy";
             else if (mediumRadio.Checked)
-                Form1.difficulty = "medium";
+                SnakeGame.difficulty = "medium";
             else if (hardRadio.Checked)
-                Form1.difficulty = "hard";
+                SnakeGame.difficulty = "hard";
             else
-                Form1.difficulty = defaultDifficulty;
+                SnakeGame.difficulty = defaultDifficulty;
 
             //shapes
             if (snakeShapeCircle.Checked)
-                Form1.snakeShape = "circle";
+                SnakeGame.snakeShape = "circle";
             else if (snakeShapeSquare.Checked)
-                Form1.snakeShape = "square";
+                SnakeGame.snakeShape = "square";
 
             if (foodShapeCircle.Checked)
-                Form1.foodShape = "circle";
+                SnakeGame.foodShape = "circle";
             else if (foodShapeSquare.Checked)
-                Form1.foodShape = "square";
+                SnakeGame.foodShape = "square";
 
             //change color new
-            Form1.headColor = changeColor(headColorCB.Text, Form1.headColor);
-            Form1.bodyColor = changeColor(bodyColorCB.Text, Form1.bodyColor);
-            Form1.foodColor = changeColor(foodColorCB.Text, Form1.foodColor);
+            SnakeGame.headColor = changeColor(headColorCB.Text, SnakeGame.headColor);
+            SnakeGame.bodyColor = changeColor(bodyColorCB.Text, SnakeGame.bodyColor);
+            SnakeGame.foodColor = changeColor(foodColorCB.Text, SnakeGame.foodColor);
 
             //change colors
             //TypeConverter tc = new ColorConverter()

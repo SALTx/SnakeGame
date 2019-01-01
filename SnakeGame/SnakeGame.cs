@@ -6,7 +6,7 @@ using System.Media;
 
 namespace SnakeGame
 {
-    public partial class Form1 : Form
+    public partial class SnakeGame : Form
     {
         /*
          for future reference the pause is implemented really badly
@@ -32,12 +32,12 @@ namespace SnakeGame
 
         public static string playerName = "Player 1";
 
-        public Form1()
+        public SnakeGame()
         {
             InitializeComponent();
             //Default settings
             new Settings(difficulty);
-            Highscore1.getScoresFromFile();
+
             //for starting the timer and setting the timer interval for tick
             GameTimer.Interval = 1000 / Settings.Speed;
             GameTimer.Tick += UpdateScreen;
@@ -70,9 +70,20 @@ namespace SnakeGame
         }
         private void PauseScreen(object sender, EventArgs e)
         {
-            if (GameInput.PressedKey(Keys.Space)) {
-                GameTimer.Start();
-                PauseTimer.Stop();
+            if (GameInput.PressedKey(Keys.Space))
+            {
+                if (Settings.IsGamePaused)
+                {
+                    GameTimer.Start();
+                    PauseTimer.Stop();
+                    Settings.IsGamePaused = false;
+                }
+                else
+                {
+                    GameTimer.Stop();
+                    PauseTimer.Start();
+                    Settings.IsGamePaused = true;
+                }
             }
         }
         private void UpdateScreen(object sender, EventArgs e)
