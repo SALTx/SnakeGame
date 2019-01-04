@@ -145,7 +145,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;canvas.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="status_l.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -178,7 +178,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;status_l.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="score_l.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -271,7 +271,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="highscoreTag.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -337,19 +337,25 @@
     <value>135, 17</value>
   </metadata>
   <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Settings</value>
   </data>
   <data name="profileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="profileToolStripMenuItem.Text" xml:space="preserve">
     <value>Profile</value>
   </data>
+  <data name="multiplayerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="multiplayerToolStripMenuItem.Text" xml:space="preserve">
+    <value>Multiplayer</value>
+  </data>
   <data name="quitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="quitToolStripMenuItem.Text" xml:space="preserve">
     <value>Quit</value>
@@ -382,7 +388,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -440,9 +446,6 @@ Esc - Quit
   <data name="&gt;&gt;controlsbox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="PauseTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>250, 17</value>
-  </metadata>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>447, 78</value>
   </data>
@@ -462,7 +465,7 @@ Esc - Quit
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -492,6 +495,34 @@ Esc - Quit
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblDebug.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblDebug.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 41</value>
+  </data>
+  <data name="lblDebug.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 26</value>
+  </data>
+  <data name="lblDebug.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="lblDebug.Text" xml:space="preserve">
+    <value>0                                          0
+0                                          0</value>
+  </data>
+  <data name="&gt;&gt;lblDebug.Name" xml:space="preserve">
+    <value>lblDebug</value>
+  </data>
+  <data name="&gt;&gt;lblDebug.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblDebug.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblDebug.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -3688,14 +3719,14 @@ Esc - Quit
   <data name="&gt;&gt;quitToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PauseTimer.Name" xml:space="preserve">
-    <value>PauseTimer</value>
+  <data name="&gt;&gt;multiplayerToolStripMenuItem.Name" xml:space="preserve">
+    <value>multiplayerToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;PauseTimer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;multiplayerToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Form1</value>
+    <value>SnakeGame</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

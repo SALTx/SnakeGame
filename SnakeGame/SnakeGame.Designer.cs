@@ -45,9 +45,10 @@
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlsbox = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.PauseTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.multiplayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblDebug = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.controlsbox.SuspendLayout();
@@ -109,6 +110,7 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingsToolStripMenuItem,
             this.profileToolStripMenuItem,
+            this.multiplayerToolStripMenuItem,
             this.quitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
@@ -158,13 +160,24 @@
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
             // 
-            // Form1
+            // multiplayerToolStripMenuItem
+            // 
+            this.multiplayerToolStripMenuItem.Name = "multiplayerToolStripMenuItem";
+            resources.ApplyResources(this.multiplayerToolStripMenuItem, "multiplayerToolStripMenuItem");
+            // 
+            // lblDebug
+            // 
+            resources.ApplyResources(this.lblDebug, "lblDebug");
+            this.lblDebug.Name = "lblDebug";
+            // 
+            // SnakeGame
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.BackgroundImage = global::SnakeGame.Resources1.background_01_01;
+            this.Controls.Add(this.lblDebug);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
@@ -176,7 +189,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "SnakeGame";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).EndInit();
@@ -207,10 +220,11 @@
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.Timer GameTimer;
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
-        private System.Windows.Forms.Timer PauseTimer;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem multiplayerToolStripMenuItem;
+        private System.Windows.Forms.Label lblDebug;
     }
 }
 

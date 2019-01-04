@@ -52,11 +52,11 @@
     <Compile Include="Enemies.cs" />
     <Compile Include="Highscore1.cs" />
     <Compile Include="Powerup.cs" />
-    <Compile Include="Profile.cs">
+    <Compile Include="ProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Profile.Designer.cs">
-      <DependentUpon>Profile.cs</DependentUpon>
+    <Compile Include="ProfileForm.Designer.cs">
+      <DependentUpon>ProfileForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -87,8 +87,8 @@
     <EmbeddedResource Include="SnakeGame.resx">
       <DependentUpon>SnakeGame.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Profile.resx">
-      <DependentUpon>Profile.cs</DependentUpon>
+    <EmbeddedResource Include="ProfileForm.resx">
+      <DependentUpon>ProfileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

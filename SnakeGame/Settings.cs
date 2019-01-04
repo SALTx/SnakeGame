@@ -26,6 +26,10 @@ namespace SnakeGame
         public static double enemySpawnRate { get; set; }
         public static double powerupSpawnRate { get; set; }
 
+        /*Player Names*/
+        public static string player1Name { get; set; }
+        public static string player2Name { get; set; }
+
         public Settings(string difficulty)
         {
 
@@ -57,8 +61,9 @@ namespace SnakeGame
             InGameDirection = Direction.Right;
             enemyEnabled = false;
             powerupEnabled = false;
-            //by default both enemies and powerups are disabled
-            //this will be the default direction in which the game starts with
+            IsGamePaused = false;
+            player1Name = "Player 1";
+            player2Name = "Player 2";
         }
 
     }

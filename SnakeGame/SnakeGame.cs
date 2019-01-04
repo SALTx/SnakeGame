@@ -8,11 +8,6 @@ namespace SnakeGame
 {
     public partial class SnakeGame : Form
     {
-        /*
-         for future reference the pause is implemented really badly
-         it starts a new clocktimer called pausetimer and stops gametimer so i can (draw) the spacebar to unpause
-         very badly implemented plsfix
-        */
         private List<Snake> Snake = new List<Snake>();
         private Snake food = new Snake();
         string deathCause = "You died for some unknown reason";
@@ -32,20 +27,21 @@ namespace SnakeGame
 
         public static string playerName = "Player 1";
 
+        private SettingsForm settings;
+        private ProfileForm profiles;
+
         public SnakeGame()
         {
             InitializeComponent();
             //Default settings
             new Settings(difficulty);
+            settings = new SettingsForm();
+            profiles = new ProfileForm();
 
-            //for starting the timer and setting the timer interval for tick
-            GameTimer.Interval = 1000 / Settings.Speed;
+        //for starting the timer and setting the timer interval for tick
+        GameTimer.Interval = 1000 / Settings.Speed;
             GameTimer.Tick += UpdateScreen;
             GameTimer.Start();
-
-            //for starting the pause timer when the game is supposed to be paused
-            PauseTimer.Interval = 100 / Settings.Speed;
-            PauseTimer.Tick += PauseScreen;
 
             StartGame();
 
@@ -68,24 +64,7 @@ namespace SnakeGame
             score_l.Text = Settings.Score.ToString();
             CreateFood();
         }
-        private void PauseScreen(object sender, EventArgs e)
-        {
-            if (GameInput.PressedKey(Keys.Space))
-            {
-                if (Settings.IsGamePaused)
-                {
-                    GameTimer.Start();
-                    PauseTimer.Stop();
-                    Settings.IsGamePaused = false;
-                }
-                else
-                {
-                    GameTimer.Stop();
-                    PauseTimer.Start();
-                    Settings.IsGamePaused = true;
-                }
-            }
-        }
+
         private void UpdateScreen(object sender, EventArgs e)
         {
             highscoreLBL.Text = Highscore.GetHighScore().ToString();
@@ -98,14 +77,6 @@ namespace SnakeGame
                     StartGame();
                 }
             }
-            else if (Settings.IsGamePaused)
-            {
-                //Check if Space is pressed
-                if (GameInput.PressedKey(Keys.Space))
-                {
-                    //
-                }
-            }
             else
             {
                 if ((GameInput.PressedKey(Keys.Right) || (GameInput.PressedKey(Keys.D))) && Settings.InGameDirection != Direction.Left)
@@ -116,18 +87,23 @@ namespace SnakeGame
                     Settings.InGameDirection = Direction.Up;
                 else if ((GameInput.PressedKey(Keys.Down) || (GameInput.PressedKey(Keys.S))) && Settings.InGameDirection != Direction.Up)
                     Settings.InGameDirection = Direction.Down;
-                else if (GameInput.PressedKey(Keys.Space))
-                    GamePaused();
                 //(()or())and()
+                if (GameInput.PressedKey(Keys.Space))
+                    Settings.IsGamePaused = !Settings.IsGamePaused;
+                if (GameInput.PressedKey(Keys.K))
+                    lblDebug.Text = Keys.K.ToString();
 
-
-                MoveSnake();
+                if (!Settings.IsGamePaused)
+                {
+                    MoveSnake(Snake);
+                }
             }
+
 
             canvas.Invalidate();
         }
 
-        private void MoveSnake()
+        private void MoveSnake(List<Snake> snake)
         {
             for (int i = Snake.Count - 1; i >= 0; i--)
             {
@@ -203,16 +179,6 @@ namespace SnakeGame
 
         }
 
-
-
-        private void GamePaused()
-        {
-            
-            PauseTimer.Start();
-            GameTimer.Stop();
-        }
-
-
         private void GameOver()
         {
             Settings.IsGameOver = true;
@@ -221,12 +187,13 @@ namespace SnakeGame
         private void EatFood()
         {
             //For adding circle to snake's body on eating the food
-            Snake snake = new Snake {
+            Snake snake = new Snake
+            {
                 X = Snake[Snake.Count - 1].X,
                 Y = Snake[Snake.Count - 1].Y,
                 //testing
 
-                
+
             };
             Snake.Add(snake);
             //for updating the score
@@ -250,7 +217,7 @@ namespace SnakeGame
                     //TODO: Add image implementation or different rendering methods
                     Brush SnakeColour;
 
-                    
+
                     if (i == 0)
                         SnakeColour = headColor;        //For snake head
                     else
@@ -302,7 +269,7 @@ namespace SnakeGame
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new SettingsForm().Show();
+            settings.ShowDialog();
         }
 
         private void quitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -312,7 +279,7 @@ namespace SnakeGame
 
         private void profileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            profiles.ShowDialog();
         }
     }
 }
