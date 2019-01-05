@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SQLite;
+
 namespace SnakeGame
 {
     //To store the High Score
