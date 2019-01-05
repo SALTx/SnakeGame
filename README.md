@@ -17,4 +17,13 @@ Enter - Respawn
 ![alt text](https://github.com/SALTx/SnakeGame/blob/master/Screenshots/Settings.png "Settings Screen")
 ![alt text](https://github.com/SALTx/SnakeGame/blob/master/Screenshots/Profiles.png "Profiles Screen")
 
+## To-do
+
+A pause button  (Done)
+Color changer   (Done)
+Shape changer   (Done)
+Eat/Die Sounds  (Done)
+Change controls 
+Powerups        
+
 ***

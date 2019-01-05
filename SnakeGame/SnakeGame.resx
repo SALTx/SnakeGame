@@ -501,16 +501,17 @@ Esc - Quit
     <value>True</value>
   </data>
   <data name="lblDebug.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 41</value>
+    <value>12, 36</value>
   </data>
   <data name="lblDebug.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 26</value>
+    <value>145, 39</value>
   </data>
   <data name="lblDebug.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
   <data name="lblDebug.Text" xml:space="preserve">
     <value>0                                          0
+            Debug
 0                                          0</value>
   </data>
   <data name="&gt;&gt;lblDebug.Name" xml:space="preserve">
