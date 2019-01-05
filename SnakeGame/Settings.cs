@@ -36,19 +36,19 @@ namespace SnakeGame
             switch(difficulty)
             {
                 case "easy":
-                    Speed = 8;
+                    Speed = 12;
                     Points = 100;
                     enemySpawnRate = 0.2;
                     powerupSpawnRate = 0.3;
                     break;
                 case "medium":
-                    Speed = 12;
+                    Speed = 15;
                     Points = 110;
                     enemySpawnRate = 0.4;
                     powerupSpawnRate = 0.6;
                     break;
                 case "hard":
-                    Speed = 16;
+                    Speed = 20;
                     Points = 120;
                     enemySpawnRate = 0.6;
                     powerupSpawnRate = 0.7;

@@ -40,6 +40,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.enableMultiplayerCB = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -84,7 +85,7 @@
             // 
             // updateBTN
             // 
-            this.updateBTN.Location = new System.Drawing.Point(166, 119);
+            this.updateBTN.Location = new System.Drawing.Point(344, 119);
             this.updateBTN.Name = "updateBTN";
             this.updateBTN.Size = new System.Drawing.Size(75, 23);
             this.updateBTN.TabIndex = 4;
@@ -94,7 +95,7 @@
             // 
             // closeBTN
             // 
-            this.closeBTN.Location = new System.Drawing.Point(283, 119);
+            this.closeBTN.Location = new System.Drawing.Point(425, 119);
             this.closeBTN.Name = "closeBTN";
             this.closeBTN.Size = new System.Drawing.Size(75, 23);
             this.closeBTN.TabIndex = 5;
@@ -166,12 +167,23 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "0";
             // 
+            // enableMultiplayerCB
+            // 
+            this.enableMultiplayerCB.AutoSize = true;
+            this.enableMultiplayerCB.Location = new System.Drawing.Point(24, 123);
+            this.enableMultiplayerCB.Name = "enableMultiplayerCB";
+            this.enableMultiplayerCB.Size = new System.Drawing.Size(112, 17);
+            this.enableMultiplayerCB.TabIndex = 12;
+            this.enableMultiplayerCB.Text = "Enable Multiplayer";
+            this.enableMultiplayerCB.UseVisualStyleBackColor = true;
+            // 
             // ProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(525, 169);
+            this.Controls.Add(this.enableMultiplayerCB);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.closeBTN);
@@ -183,6 +195,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -200,5 +213,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckBox enableMultiplayerCB;
     }
 }

@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enemies.cs" />
-    <Compile Include="Highscore1.cs" />
+    <Compile Include="highscore1.cs" />
     <Compile Include="Powerup.cs" />
     <Compile Include="ProfileForm.cs">
       <SubType>Form</SubType>

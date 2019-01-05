@@ -26,13 +26,14 @@ namespace SnakeGame
                 cmd.ExecuteNonQuery();
                 //close the database
                 Conn.Close();
-                return score;
+                
                 cmd = new SQLiteCommand("INSERT INTO score VALUES('0')", Conn);
                 //open the database
                 Conn.Open();
                 cmd.ExecuteNonQuery();
                 //close conection
                 Conn.Close();
+                return score;
             }
 
             else

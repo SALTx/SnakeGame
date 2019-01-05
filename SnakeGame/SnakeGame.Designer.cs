@@ -42,13 +42,14 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.multiplayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlsbox = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.multiplayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblDebug = new System.Windows.Forms.Label();
+            this.pausedLBL = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.controlsbox.SuspendLayout();
@@ -127,6 +128,11 @@
             resources.ApplyResources(this.profileToolStripMenuItem, "profileToolStripMenuItem");
             this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click);
             // 
+            // multiplayerToolStripMenuItem
+            // 
+            this.multiplayerToolStripMenuItem.Name = "multiplayerToolStripMenuItem";
+            resources.ApplyResources(this.multiplayerToolStripMenuItem, "multiplayerToolStripMenuItem");
+            // 
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
@@ -160,15 +166,16 @@
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
             // 
-            // multiplayerToolStripMenuItem
-            // 
-            this.multiplayerToolStripMenuItem.Name = "multiplayerToolStripMenuItem";
-            resources.ApplyResources(this.multiplayerToolStripMenuItem, "multiplayerToolStripMenuItem");
-            // 
             // lblDebug
             // 
             resources.ApplyResources(this.lblDebug, "lblDebug");
             this.lblDebug.Name = "lblDebug";
+            // 
+            // pausedLBL
+            // 
+            resources.ApplyResources(this.pausedLBL, "pausedLBL");
+            this.pausedLBL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.pausedLBL.Name = "pausedLBL";
             // 
             // SnakeGame
             // 
@@ -177,6 +184,7 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.BackgroundImage = global::SnakeGame.Resources1.background_01_01;
+            this.Controls.Add(this.pausedLBL);
             this.Controls.Add(this.lblDebug);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
@@ -225,6 +233,7 @@
         private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem multiplayerToolStripMenuItem;
         private System.Windows.Forms.Label lblDebug;
+        private System.Windows.Forms.Label pausedLBL;
     }
 }
 

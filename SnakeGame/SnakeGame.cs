@@ -10,7 +10,7 @@ namespace SnakeGame
     {
         private List<Snake> Snake = new List<Snake>();
         private Snake food = new Snake();
-        string deathCause = "You died for some unknown reason";
+        private string deathCause = "You died for some unknown reason";
 
         //sounds
         System.Media.SoundPlayer crunch = new System.Media.SoundPlayer(Resources1.crunch);
@@ -24,8 +24,6 @@ namespace SnakeGame
         public static string snakeShape = "circle";
         public static string foodShape = "circle";
         public static string difficulty = "easy";
-
-        public static string playerName = "Player 1";
 
         private SettingsForm settings;
         private ProfileForm profiles;
@@ -52,6 +50,7 @@ namespace SnakeGame
         {
             status_l.Visible = false;
 
+
             //Default settings
             new Settings(difficulty);
 
@@ -68,6 +67,7 @@ namespace SnakeGame
         private void UpdateScreen(object sender, EventArgs e)
         {
             highscoreLBL.Text = Highscore.GetHighScore().ToString();
+
             //Check for Game Over
             if (Settings.IsGameOver)
             {
@@ -89,7 +89,10 @@ namespace SnakeGame
                     Settings.InGameDirection = Direction.Down;
                 //(()or())and()
                 if (GameInput.PressedKey(Keys.Space))
+                {
                     Settings.IsGamePaused = !Settings.IsGamePaused;
+                    pausedLBL.Visible = !pausedLBL.Visible;
+                }
                 if (GameInput.PressedKey(Keys.K))
                     lblDebug.Text = Keys.K.ToString();
 
@@ -269,6 +272,7 @@ namespace SnakeGame
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Settings.IsGamePaused = true;
             settings.ShowDialog();
         }
 
@@ -279,6 +283,7 @@ namespace SnakeGame
 
         private void profileToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Settings.IsGamePaused = true;
             profiles.ShowDialog();
         }
     }
