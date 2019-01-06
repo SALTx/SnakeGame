@@ -46,10 +46,11 @@ namespace SnakeGame
             //i want to play a sound when the game starts
 
         }
+
         private void StartGame()
         {
             status_l.Visible = false;
-
+            playernamelbl.Text = Settings.player1Name;
 
             //Default settings
             new Settings(difficulty);
@@ -264,11 +265,12 @@ namespace SnakeGame
         {
             GameInput.ChangeState(e.KeyCode, true);
         }
-        //i dont think keyUP works
+        
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
             GameInput.ChangeState(e.KeyCode, false);
         }
+
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {

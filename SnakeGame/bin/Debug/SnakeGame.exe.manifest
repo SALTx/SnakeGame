@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SnakeGame.exe" size="1322472">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SnakeGame.exe" size="1325544">
       <assemblyIdentity name="SnakeGame" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Yj7Nd/5eTgPqepg5Mv9oYkBgNLS7biOhOgMJzuUZ9yc=</dsig:DigestValue>
+        <dsig:DigestValue>akLTSU3RloOdouvSCh/2gAkzTa0NKb0vq1y5qadBarY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kjq/NlCH5D367LFg3gxSedni/VM08M8Yy7CyEH260dA=</dsig:DigestValue>
+        <dsig:DigestValue>HQQDrw/KbfYJ8r0TX67Lts+5VWwiBXYXUAnNXLApWhY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

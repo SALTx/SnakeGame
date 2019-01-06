@@ -39,7 +39,7 @@
             this.player2nameTB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.player2highscoreLBL = new System.Windows.Forms.Label();
             this.enableMultiplayerCB = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -121,7 +121,7 @@
             this.groupBox2.Controls.Add(this.player2nameTB);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.player2highscoreLBL);
             this.groupBox2.Location = new System.Drawing.Point(283, 13);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(217, 100);
@@ -157,15 +157,15 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "Highscore:";
             // 
-            // label5
+            // player2highscoreLBL
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("MS Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(135, 65);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(20, 19);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "0";
+            this.player2highscoreLBL.AutoSize = true;
+            this.player2highscoreLBL.Font = new System.Drawing.Font("MS Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player2highscoreLBL.Location = new System.Drawing.Point(135, 65);
+            this.player2highscoreLBL.Name = "player2highscoreLBL";
+            this.player2highscoreLBL.Size = new System.Drawing.Size(20, 19);
+            this.player2highscoreLBL.TabIndex = 2;
+            this.player2highscoreLBL.Text = "0";
             // 
             // enableMultiplayerCB
             // 
@@ -212,7 +212,7 @@
         private System.Windows.Forms.TextBox player2nameTB;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label player2highscoreLBL;
         private System.Windows.Forms.CheckBox enableMultiplayerCB;
     }
 }

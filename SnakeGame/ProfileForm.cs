@@ -17,6 +17,8 @@ namespace SnakeGame
             InitializeComponent();
             player1nameTB.Text = Settings.player1Name;
             player2nameTB.Text = Settings.player2Name;
+            player1highscoreLBL.Text = Highscore.GetHighScore(player1nameTB.Text) + "";
+            player2highscoreLBL.Text = Highscore.GetHighScore(player2nameTB.Text) + "";
         }
 
         private void closeBTN_Click(object sender, EventArgs e)
@@ -28,6 +30,8 @@ namespace SnakeGame
         {
             Settings.player1Name = player1nameTB.Text;
             Settings.player2Name = player2nameTB.Text;
+            player1highscoreLBL.Text = Highscore.GetHighScore(player1nameTB.Text) + "";
+            player2highscoreLBL.Text = Highscore.GetHighScore(player2nameTB.Text) + "";
         }
     }
 }

@@ -42,7 +42,6 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.multiplayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlsbox = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,6 +49,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblDebug = new System.Windows.Forms.Label();
             this.pausedLBL = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.playernamelbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.controlsbox.SuspendLayout();
@@ -111,7 +112,6 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingsToolStripMenuItem,
             this.profileToolStripMenuItem,
-            this.multiplayerToolStripMenuItem,
             this.quitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
@@ -127,11 +127,6 @@
             this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
             resources.ApplyResources(this.profileToolStripMenuItem, "profileToolStripMenuItem");
             this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click);
-            // 
-            // multiplayerToolStripMenuItem
-            // 
-            this.multiplayerToolStripMenuItem.Name = "multiplayerToolStripMenuItem";
-            resources.ApplyResources(this.multiplayerToolStripMenuItem, "multiplayerToolStripMenuItem");
             // 
             // quitToolStripMenuItem
             // 
@@ -153,6 +148,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.playernamelbl);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.highscoreTag);
             this.panel1.Controls.Add(this.controlsbox);
             this.panel1.Controls.Add(this.score_l);
@@ -176,6 +173,17 @@
             resources.ApplyResources(this.pausedLBL, "pausedLBL");
             this.pausedLBL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.pausedLBL.Name = "pausedLBL";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
+            // 
+            // playernamelbl
+            // 
+            resources.ApplyResources(this.playernamelbl, "playernamelbl");
+            this.playernamelbl.ForeColor = System.Drawing.Color.Green;
+            this.playernamelbl.Name = "playernamelbl";
             // 
             // SnakeGame
             // 
@@ -231,9 +239,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem multiplayerToolStripMenuItem;
         private System.Windows.Forms.Label lblDebug;
         private System.Windows.Forms.Label pausedLBL;
+        private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Label playernamelbl;
     }
 }
 
