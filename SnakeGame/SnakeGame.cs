@@ -66,7 +66,7 @@ namespace SnakeGame
 
         private void UpdateScreen(object sender, EventArgs e)
         {
-            highscoreLBL.Text = Highscore.GetHighScore().ToString();
+            highscoreLBL.Text = Highscore.GetHighScore(Settings.player1Name).ToString();
 
             //Check for Game Over
             if (Settings.IsGameOver)

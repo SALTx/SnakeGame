@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Data.SQLite;
+using System.Runtime.CompilerServices;
 
 namespace SnakeGame
 {
     //To store the High Score
     class Highscore
     {
-        public static int GetHighScore()
+        public static int GetHighScore(string name)
         {
             int score = 0;
             SQLiteConnection Conn;
@@ -20,7 +21,7 @@ namespace SnakeGame
                 Conn = new SQLiteConnection("Data Source=Highscoredb.sqlite;Version=3;");
 
                 //create a new table
-                string query = "CREATE TABLE score (Highscore varchar(10))";
+                string query = "CREATE TABLE score (Highscore varchar(10), name varchar(20))";
                 cmd = new SQLiteCommand(query, Conn);
                 //open the database
                 Conn.Open();
@@ -28,7 +29,7 @@ namespace SnakeGame
                 //close the database
                 Conn.Close();
                 
-                cmd = new SQLiteCommand("INSERT INTO score VALUES('0')", Conn);
+                cmd = new SQLiteCommand("INSERT INTO score VALUES('0', \"" + Settings.player1Name + "\")", Conn);
                 //open the database
                 Conn.Open();
                 cmd.ExecuteNonQuery();
@@ -40,7 +41,7 @@ namespace SnakeGame
             else
             {
                 Conn = new SQLiteConnection("Data Source=Highscoredb.sqlite;Version=3;");
-                cmd = new SQLiteCommand("SELECT Highscore FROM score ", Conn);
+                cmd = new SQLiteCommand("SELECT Highscore FROM score WHERE name = \"" + name + "\"", Conn);
                 Conn.Open();
                 cmd.ExecuteNonQuery();
 
@@ -60,7 +61,7 @@ namespace SnakeGame
         //if the current score is the new High Score then Updates the High Score in database
         public static bool SetHighScore(int score)
         {
-            int highScore = GetHighScore();
+            int highScore = GetHighScore(Settings.player1Name);
             SQLiteConnection Conn = new SQLiteConnection("Data Source=Highscoredb.sqlite;Version=3;"); ;
             SQLiteCommand cmd;
             //if the current score is greater than or equal to the High Score
