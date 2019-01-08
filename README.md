@@ -20,10 +20,15 @@ Enter - Respawn
 ## To-do
 
 A pause button  (Done)
+
 Color changer   (Done)
+
 Shape changer   (Done)
+
 Eat/Die Sounds  (Done)
-Change controls 
+
+Change controls
+
 Powerups        
 
 ***
