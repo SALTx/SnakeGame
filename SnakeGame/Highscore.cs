@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Data.SQLite;
 using System.Runtime.CompilerServices;
+using System.Collections.Generic;
+using System.Windows.Forms;
+//just testing something, remove this later
 
 namespace SnakeGame
 {
@@ -21,14 +24,14 @@ namespace SnakeGame
                 Conn = new SQLiteConnection("Data Source=Highscoredb.sqlite;Version=3;");
 
                 //create a new table
-                string query = "CREATE TABLE score (Highscore varchar(10), name varchar(20))";
+                string query = "CREATE TABLE score (Highscore varchar(10), Name varchar(20))";
                 cmd = new SQLiteCommand(query, Conn);
                 //open the database
                 Conn.Open();
                 cmd.ExecuteNonQuery();
                 //close the database
                 Conn.Close();
-                
+
                 cmd = new SQLiteCommand("INSERT INTO score VALUES('0', \"" + Settings.player1Name + "\")", Conn);
                 //open the database
                 Conn.Open();
@@ -41,7 +44,7 @@ namespace SnakeGame
             else
             {
                 Conn = new SQLiteConnection("Data Source=Highscoredb.sqlite;Version=3;");
-                cmd = new SQLiteCommand("SELECT Highscore FROM score WHERE name = \"" + name + "\"", Conn);
+                cmd = new SQLiteCommand("SELECT Highscore FROM score WHERE Name = \"" + name + "\"", Conn);
                 Conn.Open();
                 cmd.ExecuteNonQuery();
 
@@ -56,7 +59,34 @@ namespace SnakeGame
             }
 
         }
+        public static void GetTopScores()
+        {
+            var names = new List<string>();
+            var scores = new List<int>();
 
+            SQLiteConnection Conn1;
+            SQLiteCommand cmd1;
+
+            string query = "SELECT Name, Highscore FROM score ORDER BY Highscore DESC";
+            var conn = new SQLiteConnection("Data Source=Highscoredb.sqlite;Version=3;");
+            var cmd = new SQLiteCommand(query, conn);
+            
+
+            conn.Open();
+            cmd.ExecuteNonQuery();
+
+            SQLiteDataReader reader = cmd.ExecuteReader();
+            string test;
+            test = "";
+            while (reader.Read())
+            {
+                test = Int32.Parse(reader["Highscore"].ToString()) + "";
+        
+            }
+            MessageBox.Show(test);
+            conn.Close();
+            return;
+        }
         //Checks whether the current score is the new high score or not
         //if the current score is the new High Score then Updates the High Score in database
         public static bool SetHighScore(int score)

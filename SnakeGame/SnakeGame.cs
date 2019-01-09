@@ -27,12 +27,13 @@ namespace SnakeGame
 
         private SettingsForm settings;
         private ProfileForm profiles;
+        private Settings setup = new Settings(difficulty);
 
         public SnakeGame()
         {
             InitializeComponent();
             //Default settings
-            new Settings(difficulty);
+            
             settings = new SettingsForm();
             profiles = new ProfileForm();
 
@@ -53,7 +54,7 @@ namespace SnakeGame
             playernamelbl.Text = Settings.player1Name;
 
             //Default settings
-            new Settings(difficulty);
+            setup.resetGame();
 
             Snake.Clear();
 
@@ -95,7 +96,7 @@ namespace SnakeGame
                     pausedLBL.Visible = !pausedLBL.Visible;
                 }
                 if (GameInput.PressedKey(Keys.K))
-                    lblDebug.Text = Keys.K.ToString();
+                    Highscore.GetTopScores();
 
                 if (!Settings.IsGamePaused)
                 {

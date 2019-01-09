@@ -65,6 +65,13 @@ namespace SnakeGame
             player1Name = "Player 1";
             player2Name = "Player 2";
         }
+        public void resetGame()
+        {
+            Score = 0;
+            IsGameOver = false;
+            InGameDirection = Direction.Right;
+            IsGamePaused = false;
+        }
 
     }
 }
