@@ -10,6 +10,13 @@ namespace SnakeGame
     {
         public bool enabled { get; set; }
         public double spawnChance { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
+
+        public void spawnPowerup()
+        {
+
+        }
         /*
          Ideas for powerups
          1. extra points

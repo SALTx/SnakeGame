@@ -8,13 +8,16 @@ namespace SnakeGame
 {
     public partial class SnakeGame : Form
     {
-        private List<Snake> Snake = new List<Snake>();
-        private Snake food = new Snake();
+        private List<Shape> Snake = new List<Shape>();
+        private Shape food = new Shape();
+        private Powerup powerup = new Powerup() { X = -10, Y = -10 };
+
         private string deathCause = "You died for some unknown reason";
 
         //sounds
         System.Media.SoundPlayer crunch = new System.Media.SoundPlayer(Resources1.crunch);
         System.Media.SoundPlayer die = new System.Media.SoundPlayer(Resources1.The_Game_Over_1);
+        System.Media.SoundPlayer extraPoints = new System.Media.SoundPlayer(Resources1.powerup);
 
         /*vars for snake*/
         public static Brush headColor = Brushes.Orange;
@@ -60,11 +63,12 @@ namespace SnakeGame
 
             Snake.Clear();
 
-            Snake head = new Snake { X = 0, Y = 0 };
+            Shape head = new Shape { X = 0, Y = 0 };
             //default start for game
             Snake.Add(head);
 
             score_l.Text = Settings.Score.ToString();
+            
             CreateFood();
         }
 
@@ -91,7 +95,7 @@ namespace SnakeGame
                     pausedLBL.Visible = !pausedLBL.Visible;
                 }
                 if (GameInput.PressedKey(Keys.K))
-                    lblDebug.Text = Settings.player1Name;
+                    createPowerup();
 
                 //move when unpaused
                 if (!Settings.IsGamePaused)
@@ -112,7 +116,7 @@ namespace SnakeGame
             canvas.Invalidate();
         }
 
-        private void MoveSnake(List<Snake> snake)
+        private void MoveSnake(List<Shape> snake)
         {
             for (int i = Snake.Count - 1; i >= 0; i--)
             {
@@ -165,8 +169,12 @@ namespace SnakeGame
                         crunch.Play();
                         EatFood();
                     }
-                }
 
+                    if (Snake[0].X == powerup.X && snake[0].Y == powerup.Y)
+                    {
+                        eatPowerup("extraPoints");
+                    }
+                }
                 else
                 {
                     Snake[i].X = Snake[i - 1].X;
@@ -181,11 +189,29 @@ namespace SnakeGame
             int MaxX = canvas.Size.Width / Settings.Width;
             int MaxY = canvas.Size.Height / Settings.Height;
             Random rand = new Random();
-            //pretty similar to javascript math lib
 
-            //creating food object with random coordinates in the canvas
-            food = new Snake { X = rand.Next(0, MaxX), Y = rand.Next(0, MaxY) };
+            int x = rand.Next(0, MaxX);
+            int y = rand.Next(0, MaxY);
 
+            food = new Shape { X = x, Y = y };
+
+        }
+        private void createPowerup()
+        {
+            var chance = Settings.powerupSpawnRate;
+            var rng = new Random().Next(0, 100);
+            lblDebug.Text = rng + " " + chance + " " + (rng < chance * 100);
+            if (rng < chance * 100)
+            {
+                int MaxX = canvas.Size.Width / Settings.Width;
+                int MaxY = canvas.Size.Height / Settings.Height;
+                Random rand = new Random();
+
+                int x = rand.Next(0, MaxX);
+                int y = rand.Next(0, MaxY);
+
+                powerup = new Powerup { X = x, Y = y };
+            }
         }
 
         private void GameOver()
@@ -196,7 +222,7 @@ namespace SnakeGame
         private void EatFood()
         {
             //For adding circle to snake's body on eating the food
-            Snake snake = new Snake
+            Shape snake = new Shape
             {
                 X = Snake[Snake.Count - 1].X,
                 Y = Snake[Snake.Count - 1].Y,
@@ -210,8 +236,23 @@ namespace SnakeGame
             score_l.Text = Settings.Score.ToString();
             highscoreLBL.Text = Highscore.GetHighScore(Settings.player1Name).ToString();
             CreateFood();
-
-
+            createPowerup();
+        }
+        private void eatPowerup(string p)
+        {
+                if (p == "extraPoints")
+                {
+                    extraPoints.Play();
+                    Settings.Score += 500;
+                    score_l.Text = Settings.Score.ToString();
+                    highscoreLBL.Text = Highscore.GetHighScore(Settings.player1Name).ToString();
+                }
+                if (p == "shortenSnake")
+                {
+                    //TODO
+                }
+            powerup.X = -100;
+            powerup.Y = -100;
         }
 
         private void canvas_Paint(object sender, PaintEventArgs e)
@@ -247,6 +288,9 @@ namespace SnakeGame
                     }
                     else if (foodShape == "square")
                         draw.FillRectangle(foodColor, new Rectangle(food.X * Settings.Width, food.Y * Settings.Height, Settings.Width, Settings.Height));
+
+                    //draw powerup
+                    draw.FillRectangle(Brushes.Gold, new Rectangle(powerup.X * Settings.Width, powerup.Y * Settings.Height, Settings.Width, Settings.Height));
                 }
             }
 
@@ -270,13 +314,11 @@ namespace SnakeGame
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             GameInput.ChangeState(e.KeyCode, true);
-            lblDebug.Text = "Keydown";
         }
         
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
             GameInput.ChangeState(e.KeyCode, false);
-            lblDebug.Text = "Keyup";
         }
 
 

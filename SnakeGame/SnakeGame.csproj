@@ -122,7 +122,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enemies.cs" />
-    <Compile Include="highscore1.cs" />
     <Compile Include="Map.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,7 +140,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources1.resx</DependentUpon>
     </Compile>
-    <Compile Include="Snake.cs" />
+    <Compile Include="Shape.cs" />
     <Compile Include="SnakeGame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,9 +160,6 @@
     </Compile>
     <EmbeddedResource Include="Map.resx">
       <DependentUpon>Map.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SnakeGame.en-SG.resx">
-      <DependentUpon>SnakeGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SnakeGame.resx">
       <DependentUpon>SnakeGame.cs</DependentUpon>
@@ -226,6 +222,7 @@
     <None Include="Resources\Back3-02.jpg" />
     <None Include="Resources\grassBackground-01.jpg" />
     <None Include="Resources\sandBackground-01.jpg" />
+    <None Include="Resources\powerup.wav" />
     <Content Include="Resources\The_Game_Over_1.wav" />
   </ItemGroup>
   <ItemGroup>

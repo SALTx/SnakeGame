@@ -39,19 +39,19 @@ namespace SnakeGame
                     Speed = 12;
                     Points = 100;
                     enemySpawnRate = 0.2;
-                    powerupSpawnRate = 0.3;
+                    powerupSpawnRate = 0.5;
                     break;
                 case "medium":
                     Speed = 15;
                     Points = 110;
                     enemySpawnRate = 0.4;
-                    powerupSpawnRate = 0.6;
+                    powerupSpawnRate = 0.3;
                     break;
                 case "hard":
                     Speed = 20;
                     Points = 120;
                     enemySpawnRate = 0.6;
-                    powerupSpawnRate = 0.7;
+                    powerupSpawnRate = 0.1;
                     break;
             }
             Score = 0;

@@ -2,12 +2,12 @@
 
 namespace SnakeGame
 {
-    public class Snake
+    public class Shape
     {
         public int X { get; set; }
         public int Y { get; set; }
 
-        public Snake()
+        public Shape()
         {
             X = 0;
             Y = 0;
