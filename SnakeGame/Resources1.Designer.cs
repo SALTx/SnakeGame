@@ -63,6 +63,26 @@ namespace SnakeGame {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap back2_03 {
+            get {
+                object obj = ResourceManager.GetObject("back2_03", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Back3_02 {
+            get {
+                object obj = ResourceManager.GetObject("Back3_02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap background_01_01 {
             get {
                 object obj = ResourceManager.GetObject("background_01_01", resourceCulture);
@@ -80,12 +100,31 @@ namespace SnakeGame {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to player1	100
-        ///player2	50.
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap grassBackground_01 {
+            get {
+                object obj = ResourceManager.GetObject("grassBackground_01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to player 1	100.
         /// </summary>
         internal static string highscore {
             get {
                 return ResourceManager.GetString("highscore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sandBackground_01 {
+            get {
+                object obj = ResourceManager.GetObject("sandBackground_01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

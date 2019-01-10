@@ -59,6 +59,18 @@ namespace SnakeGame
             }
 
         }
+        public static void AddNewRecord(string name)
+        {
+            SQLiteConnection Conn1;
+            SQLiteCommand cmd1;
+
+            string query = "INSERT INTO score VALUES(0, " + name + ");";
+            var conn = new SQLiteConnection("Data Source=Highscoredb.sqlite;Version=3;");
+            var cmd = new SQLiteCommand(query, conn);
+            
+            conn.Open();
+            cmd.ExecuteNonQuery();
+        }
         public static void GetTopScores()
         {
             var names = new List<string>();
@@ -89,7 +101,7 @@ namespace SnakeGame
         }
         //Checks whether the current score is the new high score or not
         //if the current score is the new High Score then Updates the High Score in database
-        public static bool SetHighScore(int score)
+        public static bool SetHighScore(string name, int score)
         {
             int highScore = GetHighScore(Settings.player1Name);
             SQLiteConnection Conn = new SQLiteConnection("Data Source=Highscoredb.sqlite;Version=3;"); ;
@@ -97,7 +109,7 @@ namespace SnakeGame
             //if the current score is greater than or equal to the High Score
             if (highScore <= score)
             {
-                cmd = new SQLiteCommand("UPDATE score SET Highscore=" + score.ToString(), Conn);
+                cmd = new SQLiteCommand("UPDATE score SET Highscore=" + score.ToString() + " WHERE Name = \"" + name + "\"", Conn);
                 //open the database
                 Conn.Open();
                 cmd.ExecuteNonQuery();

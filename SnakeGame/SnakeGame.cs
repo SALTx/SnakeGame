@@ -27,6 +27,7 @@ namespace SnakeGame
 
         private SettingsForm settings;
         private ProfileForm profiles;
+        private Map maps;
         private Settings setup = new Settings(difficulty);
 
         public SnakeGame()
@@ -36,6 +37,7 @@ namespace SnakeGame
             
             settings = new SettingsForm();
             profiles = new ProfileForm();
+            maps = new Map();
 
         //for starting the timer and setting the timer interval for tick
         GameTimer.Interval = 1000 / Settings.Speed;
@@ -81,14 +83,7 @@ namespace SnakeGame
             }
             else
             {
-                if ((GameInput.PressedKey(Keys.Right) || (GameInput.PressedKey(Keys.D))) && Settings.InGameDirection != Direction.Left)
-                    Settings.InGameDirection = Direction.Right;
-                else if ((GameInput.PressedKey(Keys.Left) || (GameInput.PressedKey(Keys.A))) && Settings.InGameDirection != Direction.Right)
-                    Settings.InGameDirection = Direction.Left;
-                else if ((GameInput.PressedKey(Keys.Up) || (GameInput.PressedKey(Keys.W))) && Settings.InGameDirection != Direction.Down)
-                    Settings.InGameDirection = Direction.Up;
-                else if ((GameInput.PressedKey(Keys.Down) || (GameInput.PressedKey(Keys.S))) && Settings.InGameDirection != Direction.Up)
-                    Settings.InGameDirection = Direction.Down;
+
                 //(()or())and()
                 if (GameInput.PressedKey(Keys.Space))
                 {
@@ -96,10 +91,19 @@ namespace SnakeGame
                     pausedLBL.Visible = !pausedLBL.Visible;
                 }
                 if (GameInput.PressedKey(Keys.K))
-                    Highscore.GetTopScores();
+                    lblDebug.Text = Settings.player1Name;
 
+                //move when unpaused
                 if (!Settings.IsGamePaused)
                 {
+                    if ((GameInput.PressedKey(Keys.Right) || (GameInput.PressedKey(Keys.D))) && Settings.InGameDirection != Direction.Left)
+                        Settings.InGameDirection = Direction.Right;
+                    else if ((GameInput.PressedKey(Keys.Left) || (GameInput.PressedKey(Keys.A))) && Settings.InGameDirection != Direction.Right)
+                        Settings.InGameDirection = Direction.Left;
+                    else if ((GameInput.PressedKey(Keys.Up) || (GameInput.PressedKey(Keys.W))) && Settings.InGameDirection != Direction.Down)
+                        Settings.InGameDirection = Direction.Up;
+                    else if ((GameInput.PressedKey(Keys.Down) || (GameInput.PressedKey(Keys.S))) && Settings.InGameDirection != Direction.Up)
+                        Settings.InGameDirection = Direction.Down;
                     MoveSnake(Snake);
                 }
             }
@@ -204,7 +208,7 @@ namespace SnakeGame
             //for updating the score
             Settings.Score += Settings.Points;
             score_l.Text = Settings.Score.ToString();
-
+            highscoreLBL.Text = Highscore.GetHighScore(Settings.player1Name).ToString();
             CreateFood();
 
 
@@ -221,6 +225,7 @@ namespace SnakeGame
                 {
                     //TODO: Add image implementation or different rendering methods
                     Brush SnakeColour;
+                    bool random = false;
 
 
                     if (i == 0)
@@ -248,7 +253,7 @@ namespace SnakeGame
             else
             {
                 string message;
-                if (Highscore.SetHighScore(Settings.Score) == true)
+                if (Highscore.SetHighScore(Settings.player1Name, Settings.Score) == true)
                 {
                     message = "Reached High Score !!\nYour Score is: " + Settings.Score + "\n\nPress ENTER Key to try again";
 
@@ -265,11 +270,13 @@ namespace SnakeGame
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             GameInput.ChangeState(e.KeyCode, true);
+            lblDebug.Text = "Keydown";
         }
         
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
             GameInput.ChangeState(e.KeyCode, false);
+            lblDebug.Text = "Keyup";
         }
 
 
@@ -288,6 +295,16 @@ namespace SnakeGame
         {
             Settings.IsGamePaused = true;
             profiles.ShowDialog();
+        }
+
+        private void mapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Settings.IsGamePaused = true;
+            maps.ShowDialog();
+        }
+        public static void changeMap(Bitmap image)
+        {
+            //canvas.BackgroundImage = image;
         }
     }
 }

@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -123,6 +123,12 @@
   <ItemGroup>
     <Compile Include="Enemies.cs" />
     <Compile Include="highscore1.cs" />
+    <Compile Include="Map.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Map.Designer.cs">
+      <DependentUpon>Map.cs</DependentUpon>
+    </Compile>
     <Compile Include="Powerup.cs" />
     <Compile Include="ProfileForm.cs">
       <SubType>Form</SubType>
@@ -153,6 +159,9 @@
     <Compile Include="SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Map.resx">
+      <DependentUpon>Map.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SnakeGame.en-SG.resx">
       <DependentUpon>SnakeGame.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,6 +221,11 @@
     <None Include="Resources\background-01-01.jpg" />
     <None Include="Resources\background-01.jpg" />
     <None Include="Resources\highscore.txt" />
+    <None Include="Resources\back1-01.jpg" />
+    <None Include="Resources\back2-03.jpg" />
+    <None Include="Resources\Back3-02.jpg" />
+    <None Include="Resources\grassBackground-01.jpg" />
+    <None Include="Resources\sandBackground-01.jpg" />
     <Content Include="Resources\The_Game_Over_1.wav" />
   </ItemGroup>
   <ItemGroup>

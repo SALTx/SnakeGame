@@ -16,19 +16,11 @@ Enter - Respawn
 ![alt text](https://github.com/SALTx/SnakeGame/blob/master/Screenshots/Game.png "Game Screen")
 ![alt text](https://github.com/SALTx/SnakeGame/blob/master/Screenshots/Settings.png "Settings Screen")
 ![alt text](https://github.com/SALTx/SnakeGame/blob/master/Screenshots/Profiles.png "Profiles Screen")
+![alt text](https://github.com/SALTx/SnakeGame/blob/master/Screenshots/Map.png "Map Screen")
 
-## To-do
+## Maps
 
-A pause button  (Done)
-
-Color changer   (Done)
-
-Shape changer   (Done)
-
-Eat/Die Sounds  (Done)
-
-Change controls
-
-Powerups        
+![alt text](https://github.com/SALTx/SnakeGame/blob/master/Screenshots/Maps/grassBackground-01.jpg "Grass Map")
+![alt text](https://github.com/SALTx/SnakeGame/blob/master/Screenshots/Maps/sandBackground-01.jpg "Desert Map")
 
 ***

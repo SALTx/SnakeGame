@@ -12,6 +12,7 @@ namespace SnakeGame
 {
     public partial class ProfileForm : Form
     {
+        
         public ProfileForm()
         {
             InitializeComponent();

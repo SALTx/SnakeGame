@@ -46,11 +46,12 @@
             this.controlsbox = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.playernamelbl = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblDebug = new System.Windows.Forms.Label();
             this.pausedLBL = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.playernamelbl = new System.Windows.Forms.Label();
+            this.mapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.controlsbox.SuspendLayout();
@@ -61,6 +62,7 @@
             // 
             resources.ApplyResources(this.canvas, "canvas");
             this.canvas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.canvas.BackgroundImage = global::SnakeGame.Resources1.grassBackground_01;
             this.canvas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.canvas.Cursor = System.Windows.Forms.Cursors.Default;
             this.canvas.Name = "canvas";
@@ -111,6 +113,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingsToolStripMenuItem,
+            this.mapToolStripMenuItem,
             this.profileToolStripMenuItem,
             this.quitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -158,6 +161,17 @@
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
+            // playernamelbl
+            // 
+            resources.ApplyResources(this.playernamelbl, "playernamelbl");
+            this.playernamelbl.ForeColor = System.Drawing.Color.Green;
+            this.playernamelbl.Name = "playernamelbl";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
+            // 
             // label4
             // 
             resources.ApplyResources(this.label4, "label4");
@@ -174,16 +188,11 @@
             this.pausedLBL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.pausedLBL.Name = "pausedLBL";
             // 
-            // label5
+            // mapToolStripMenuItem
             // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.Name = "label5";
-            // 
-            // playernamelbl
-            // 
-            resources.ApplyResources(this.playernamelbl, "playernamelbl");
-            this.playernamelbl.ForeColor = System.Drawing.Color.Green;
-            this.playernamelbl.Name = "playernamelbl";
+            this.mapToolStripMenuItem.Name = "mapToolStripMenuItem";
+            resources.ApplyResources(this.mapToolStripMenuItem, "mapToolStripMenuItem");
+            this.mapToolStripMenuItem.Click += new System.EventHandler(this.mapToolStripMenuItem_Click);
             // 
             // SnakeGame
             // 
@@ -221,8 +230,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox canvas;
         private System.Windows.Forms.Label status_l;
         private System.Windows.Forms.Label score_l;
         private System.Windows.Forms.Label label1;
@@ -243,6 +250,8 @@
         private System.Windows.Forms.Label pausedLBL;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.Label playernamelbl;
+        private System.Windows.Forms.ToolStripMenuItem mapToolStripMenuItem;
+        public System.Windows.Forms.PictureBox canvas;
     }
 }
 
