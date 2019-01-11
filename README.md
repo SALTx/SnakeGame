@@ -1,4 +1,6 @@
 ***
+![](https://img.shields.io/github/license/SALTx/SnakeGame.svg)
+
 # Snake-Game
 Classic Snake Game written in C#
 For Object Oriented Programming EG1738
