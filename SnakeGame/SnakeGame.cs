@@ -20,9 +20,9 @@ namespace SnakeGame
         System.Media.SoundPlayer extraPoints = new System.Media.SoundPlayer(Resources1.powerup);
 
         /*vars for snake*/
-        public static Brush headColor = Brushes.Orange;
-        public static Brush bodyColor = Brushes.Yellow;
-        public static Brush foodColor = Brushes.Purple;
+        private static Brush headColor = Brushes.Orange;
+        private static Brush bodyColor = Brushes.Yellow;
+        private static Brush foodColor = Brushes.Purple;
 
         public static string snakeShape = "circle";
         public static string foodShape = "circle";
@@ -136,6 +136,9 @@ namespace SnakeGame
                             break;
                         case Direction.Left:
                             Snake[i].X--;
+                            break;
+                        default:
+                            //do nothing
                             break;
                     }
 

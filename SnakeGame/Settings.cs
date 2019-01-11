@@ -53,6 +53,12 @@ namespace SnakeGame
                     enemySpawnRate = 0.6;
                     powerupSpawnRate = 0.1;
                     break;
+                default:
+                    Speed = 12;
+                    Points = 100;
+                    enemySpawnRate = 0.2;
+                    powerupSpawnRate = 0.5;
+                    break;
             }
             Score = 0;
             Width = 16;
