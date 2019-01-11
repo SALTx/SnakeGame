@@ -211,6 +211,7 @@
     <None Include="Resources\grassBackground-01.jpg" />
     <None Include="Resources\sandBackground-01.jpg" />
     <None Include="Resources\powerup.wav" />
+    <None Include="Resources\test-03.png" />
     <Content Include="Resources\The_Game_Over_1.wav" />
   </ItemGroup>
   <ItemGroup>

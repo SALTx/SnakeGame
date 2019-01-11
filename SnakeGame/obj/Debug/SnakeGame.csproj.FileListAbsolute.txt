@@ -36,9 +36,5 @@ C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\SnakeGame.csproj.
 C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\SnakeGame.csproj.CopyComplete
 C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\SnakeGame.exe
 C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\SnakeGame.pdb
-C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\bin\Debug\SnakeGame.exe.manifest
-C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\bin\Debug\SnakeGame.application
-C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\SnakeGame.exe.manifest
-C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\SnakeGame.application
 C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\SnakeGame.csprojAssemblyReference.cache
 C:\Users\Saahil\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\SnakeGame.Map.resources

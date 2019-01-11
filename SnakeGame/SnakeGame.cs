@@ -14,6 +14,8 @@ namespace SnakeGame
 
         private string deathCause = "You died for some unknown reason";
 
+        public static TextureBrush test = new TextureBrush(Resources1.test_03);
+
         //sounds
         System.Media.SoundPlayer crunch = new System.Media.SoundPlayer(Resources1.crunch);
         System.Media.SoundPlayer die = new System.Media.SoundPlayer(Resources1.The_Game_Over_1);
@@ -89,7 +91,7 @@ namespace SnakeGame
                 }
                 if (GameInput.PressedKey(Keys.K))
                 {
-                    lblDebug.Text = "fillDebugInfo";
+                    //do nothing
                 }
 
                 //move when unpaused
@@ -206,7 +208,6 @@ namespace SnakeGame
         {
             var chance = Settings.powerupSpawnRate;
             var rng = new Random().Next(0, 100);
-            lblDebug.Text = rng + " " + chance + " " + (rng < chance * 100);
             if (rng < chance * 100)
             {
                 int MaxX = canvas.Size.Width / Settings.Width;
@@ -287,7 +288,8 @@ namespace SnakeGame
                     else if (Settings.foodShape == "square") { draw.FillRectangle(Settings.foodColor, new Rectangle(food.X * Settings.Width, food.Y * Settings.Height, Settings.Width, Settings.Height)); }
 
                     //draw powerup
-                    draw.FillRectangle(Brushes.Gold, new Rectangle(powerup.X * Settings.Width, powerup.Y * Settings.Height, Settings.Width, Settings.Height));
+                    
+                    draw.FillRectangle(test, new Rectangle(powerup.X * Settings.Width, powerup.Y * Settings.Height, Settings.Width, Settings.Height));
                 }
             }
 
