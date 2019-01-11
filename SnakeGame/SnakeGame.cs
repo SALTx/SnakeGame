@@ -88,7 +88,9 @@ namespace SnakeGame
                     pausedLBL.Visible = !pausedLBL.Visible;
                 }
                 if (GameInput.PressedKey(Keys.K))
-                    createPowerup();
+                {
+                    lblDebug.Text = "fillDebugInfo";
+                }
 
                 //move when unpaused
                 if (!Settings.IsGamePaused)
@@ -279,13 +281,10 @@ namespace SnakeGame
                     //For drawing the snake
                     if (Settings.snakeShape == "circle") { draw.FillEllipse(SnakeColour, new Rectangle(Snake[i].X * Settings.Width, Snake[i].Y * Settings.Height, Settings.Width, Settings.Height)); }
                     else if (Settings.snakeShape == "square") { draw.FillRectangle(SnakeColour, new Rectangle(Snake[i].X * Settings.Width, Snake[i].Y * Settings.Height, Settings.Width, Settings.Height)); }
-                    else { draw.FillEllipse(SnakeColour, new Rectangle(Snake[i].X * Settings.Width, Snake[i].Y * Settings.Height, Settings.Width, Settings.Height)); }
                         
                     //For drawing the food
                     if (Settings.foodShape == "circle") { draw.FillEllipse(Settings.foodColor, new Rectangle(food.X * Settings.Width, food.Y * Settings.Height, Settings.Width, Settings.Height)); }
                     else if (Settings.foodShape == "square") { draw.FillRectangle(Settings.foodColor, new Rectangle(food.X * Settings.Width, food.Y * Settings.Height, Settings.Width, Settings.Height)); }
-                    else { draw.FillEllipse(Settings.foodColor, new Rectangle(food.X * Settings.Width, food.Y * Settings.Height, Settings.Width, Settings.Height)); }
-                        
 
                     //draw powerup
                     draw.FillRectangle(Brushes.Gold, new Rectangle(powerup.X * Settings.Width, powerup.Y * Settings.Height, Settings.Width, Settings.Height));

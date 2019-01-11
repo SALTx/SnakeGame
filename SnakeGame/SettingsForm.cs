@@ -52,7 +52,6 @@ namespace SnakeGame
             //difficulty radio
             string defaultDifficulty = SnakeGame.difficulty;
             if (easyRadio.Checked) { SnakeGame.difficulty = "easy"; }
-            else if (easyRadio.Checked) { SnakeGame.difficulty = "easy"; }
             else if (mediumRadio.Checked) { SnakeGame.difficulty = "medium"; }
             else if (hardRadio.Checked) { SnakeGame.difficulty = "hard"; }
             else { SnakeGame.difficulty = defaultDifficulty; }
@@ -60,11 +59,9 @@ namespace SnakeGame
             //shapes
             if (snakeShapeCircle.Checked) { Settings.snakeShape = "circle"; }
             else if (snakeShapeSquare.Checked) { Settings.snakeShape = "square"; }
-            else { Settings.snakeShape = "circle"; }
 
             if (foodShapeCircle.Checked) { Settings.foodShape = "circle"; }
             else if (foodShapeSquare.Checked) { Settings.foodShape = "square"; }
-            else { Settings.foodShape = "circle"; }
 
             //change color new
             Settings.headColor = changeColor(headColorCB.Text, Settings.headColor);

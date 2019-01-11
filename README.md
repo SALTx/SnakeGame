@@ -27,5 +27,3 @@ Enter - Respawn
 ![alt text](https://github.com/SALTx/SnakeGame/blob/master/Screenshots/Maps/grassBackground-01.jpg "Grass Map")
 ![alt text](https://github.com/SALTx/SnakeGame/blob/master/Screenshots/Maps/sandBackground-01.jpg "Desert Map")
 
-
-***
