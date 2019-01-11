@@ -54,9 +54,10 @@ namespace SnakeGame
                     powerupSpawnRate = 0.1;
                     break;
                 default:
-                    Speed = 12;
-                    Points = 100;
-                    enemySpawnRate = 0.2;
+                    //you shouldnt be able to get here
+                    Speed = 30;
+                    Points = 250;
+                    enemySpawnRate = 0;
                     powerupSpawnRate = 0.5;
                     break;
             }

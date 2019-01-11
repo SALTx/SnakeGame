@@ -279,9 +279,14 @@ namespace SnakeGame
 
                     //For drawing the snake
                     if (snakeShape == "circle")
+                    {
                         draw.FillEllipse(SnakeColour, new Rectangle(Snake[i].X * Settings.Width, Snake[i].Y * Settings.Height, Settings.Width, Settings.Height));
+                    }
                     else if (snakeShape == "square")
+                    {
                         draw.FillRectangle(SnakeColour, new Rectangle(Snake[i].X * Settings.Width, Snake[i].Y * Settings.Height, Settings.Width, Settings.Height));
+                    }
+                        
 
                     //TODO: Give the food better design
                     //For drawing the food
@@ -290,7 +295,10 @@ namespace SnakeGame
                         draw.FillEllipse(foodColor, new Rectangle(food.X * Settings.Width, food.Y * Settings.Height, Settings.Width, Settings.Height));
                     }
                     else if (foodShape == "square")
+                    {
                         draw.FillRectangle(foodColor, new Rectangle(food.X * Settings.Width, food.Y * Settings.Height, Settings.Width, Settings.Height));
+                    }
+                        
 
                     //draw powerup
                     draw.FillRectangle(Brushes.Gold, new Rectangle(powerup.X * Settings.Width, powerup.Y * Settings.Height, Settings.Width, Settings.Height));

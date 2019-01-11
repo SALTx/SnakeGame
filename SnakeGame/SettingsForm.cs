@@ -37,20 +37,13 @@ namespace SnakeGame
         private Brush changeColor(string color, Brush fallback)
         {
             Brush result;
-            if (color == "Red")
-                result = Brushes.Red;
-            else if (color == "Orange")
-                result = Brushes.Orange;
-            else if (color == "Yellow")
-                result = Brushes.Yellow;
-            else if (color == "Green")
-                result = Brushes.Green;
-            else if (color == "Blue")
-                result = Brushes.Blue;
-            else if (color == "Purple")
-                result = Brushes.Purple;
-            else
-                result = fallback;
+            if (color == "Red") { result = Brushes.Red; }
+            else if (color == "Orange") { result = Brushes.Orange; }
+            else if (color == "Yellow") { result = Brushes.Yellow; }
+            else if (color == "Green") { result = Brushes.Green; }
+            else if (color == "Blue") { result = Brushes.Blue; }
+            else if (color == "Purple") { result = Brushes.Purple; }
+            else { result = fallback; }
 
             return result;
         }   

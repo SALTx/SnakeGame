@@ -1,5 +1,7 @@
 ***
 ![](https://img.shields.io/github/license/SALTx/SnakeGame.svg)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b915313431b4464c85d73ffb32003a8d)](https://www.codacy.com/app/SALTx/SnakeGame?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=SALTx/SnakeGame&amp;utm_campaign=Badge_Grade)
+![](https://img.shields.io/github/downloads/SALTx/SnakeGame/latest/total.svg)
 
 # Snake-Game
 Classic Snake Game written in C#

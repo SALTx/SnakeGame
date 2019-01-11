@@ -8,7 +8,7 @@ using System.Windows.Forms;
 namespace SnakeGame
 {
     //To store the High Score
-    class Highscore
+    static class Highscore
     {
         public static int GetHighScore(string name)
         {
