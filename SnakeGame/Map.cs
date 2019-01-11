@@ -12,8 +12,8 @@ namespace SnakeGame
 {
     public partial class Map : Form
     {
-        private string[] maps = { "Grass", "Desert" };
-        private Bitmap[] images = { Resources1.grassBackground_01, Resources1.sandBackground_01 };
+        private readonly string[] maps = { "Grass", "Desert" };
+        private readonly Bitmap[] images = { Resources1.grassBackground_01, Resources1.sandBackground_01 };
         private int index = 0;
 
         public Map()
@@ -35,7 +35,7 @@ namespace SnakeGame
 
         private void updateBTN_Click(object sender, EventArgs e)
         {
-            
+            //TODO
         }
     }
 }

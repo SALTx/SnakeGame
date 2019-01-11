@@ -51,30 +51,25 @@ namespace SnakeGame
         {
             //difficulty radio
             string defaultDifficulty = SnakeGame.difficulty;
-            if (easyRadio.Checked)
-                SnakeGame.difficulty = "easy";
-            else if (mediumRadio.Checked)
-                SnakeGame.difficulty = "medium";
-            else if (hardRadio.Checked)
-                SnakeGame.difficulty = "hard";
-            else
-                SnakeGame.difficulty = defaultDifficulty;
+            if (easyRadio.Checked) { SnakeGame.difficulty = "easy"; }
+            else if (easyRadio.Checked) { SnakeGame.difficulty = "easy"; }
+            else if (mediumRadio.Checked) { SnakeGame.difficulty = "medium"; }
+            else if (hardRadio.Checked) { SnakeGame.difficulty = "hard"; }
+            else { SnakeGame.difficulty = defaultDifficulty; }
 
             //shapes
-            if (snakeShapeCircle.Checked)
-                SnakeGame.snakeShape = "circle";
-            else if (snakeShapeSquare.Checked)
-                SnakeGame.snakeShape = "square";
+            if (snakeShapeCircle.Checked) { Settings.snakeShape = "circle"; }
+            else if (snakeShapeSquare.Checked) { Settings.snakeShape = "square"; }
+            else { Settings.snakeShape = "circle"; }
 
-            if (foodShapeCircle.Checked)
-                SnakeGame.foodShape = "circle";
-            else if (foodShapeSquare.Checked)
-                SnakeGame.foodShape = "square";
+            if (foodShapeCircle.Checked) { Settings.foodShape = "circle"; }
+            else if (foodShapeSquare.Checked) { Settings.foodShape = "square"; }
+            else { Settings.foodShape = "circle"; }
 
             //change color new
-            SnakeGame.headColor = changeColor(headColorCB.Text, SnakeGame.headColor);
-            SnakeGame.bodyColor = changeColor(bodyColorCB.Text, SnakeGame.bodyColor);
-            SnakeGame.foodColor = changeColor(foodColorCB.Text, SnakeGame.foodColor);
+            Settings.headColor = changeColor(headColorCB.Text, Settings.headColor);
+            Settings.bodyColor = changeColor(bodyColorCB.Text, Settings.bodyColor);
+            Settings.foodColor = changeColor(foodColorCB.Text, Settings.foodColor);
 
             //change colors
             //TypeConverter tc = new ColorConverter()

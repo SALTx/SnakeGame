@@ -19,13 +19,6 @@ namespace SnakeGame
         System.Media.SoundPlayer die = new System.Media.SoundPlayer(Resources1.The_Game_Over_1);
         System.Media.SoundPlayer extraPoints = new System.Media.SoundPlayer(Resources1.powerup);
 
-        /*vars for snake*/
-        public static Brush headColor = Brushes.Orange;
-        public static Brush bodyColor = Brushes.Yellow;
-        public static Brush foodColor = Brushes.Purple;
-
-        public static string snakeShape = "circle";
-        public static string foodShape = "circle";
         public static string difficulty = "easy";
 
         private SettingsForm settings;
@@ -101,13 +94,21 @@ namespace SnakeGame
                 if (!Settings.IsGamePaused)
                 {
                     if ((GameInput.PressedKey(Keys.Right) || (GameInput.PressedKey(Keys.D))) && Settings.InGameDirection != Direction.Left)
+                    {
                         Settings.InGameDirection = Direction.Right;
+                    }
                     else if ((GameInput.PressedKey(Keys.Left) || (GameInput.PressedKey(Keys.A))) && Settings.InGameDirection != Direction.Right)
+                    {
                         Settings.InGameDirection = Direction.Left;
+                    }  
                     else if ((GameInput.PressedKey(Keys.Up) || (GameInput.PressedKey(Keys.W))) && Settings.InGameDirection != Direction.Down)
+                    {
                         Settings.InGameDirection = Direction.Up;
+                    }    
                     else if ((GameInput.PressedKey(Keys.Down) || (GameInput.PressedKey(Keys.S))) && Settings.InGameDirection != Direction.Up)
+                    {
                         Settings.InGameDirection = Direction.Down;
+                    }
                     MoveSnake(Snake);
                 }
             }
@@ -272,32 +273,18 @@ namespace SnakeGame
                     bool random = false;
 
 
-                    if (i == 0)
-                        SnakeColour = headColor;        //For snake head
-                    else
-                        SnakeColour = bodyColor;             //For rest of snake's body
+                    if (i == 0) { SnakeColour = Settings.headColor; }
+                    else { SnakeColour = Settings.bodyColor; }
 
                     //For drawing the snake
-                    if (snakeShape == "circle")
-                    {
-                        draw.FillEllipse(SnakeColour, new Rectangle(Snake[i].X * Settings.Width, Snake[i].Y * Settings.Height, Settings.Width, Settings.Height));
-                    }
-                    else if (snakeShape == "square")
-                    {
-                        draw.FillRectangle(SnakeColour, new Rectangle(Snake[i].X * Settings.Width, Snake[i].Y * Settings.Height, Settings.Width, Settings.Height));
-                    }
+                    if (Settings.snakeShape == "circle") { draw.FillEllipse(SnakeColour, new Rectangle(Snake[i].X * Settings.Width, Snake[i].Y * Settings.Height, Settings.Width, Settings.Height)); }
+                    else if (Settings.snakeShape == "square") { draw.FillRectangle(SnakeColour, new Rectangle(Snake[i].X * Settings.Width, Snake[i].Y * Settings.Height, Settings.Width, Settings.Height)); }
+                    else { draw.FillEllipse(SnakeColour, new Rectangle(Snake[i].X * Settings.Width, Snake[i].Y * Settings.Height, Settings.Width, Settings.Height)); }
                         
-
-                    //TODO: Give the food better design
                     //For drawing the food
-                    if (foodShape == "circle")
-                    {
-                        draw.FillEllipse(foodColor, new Rectangle(food.X * Settings.Width, food.Y * Settings.Height, Settings.Width, Settings.Height));
-                    }
-                    else if (foodShape == "square")
-                    {
-                        draw.FillRectangle(foodColor, new Rectangle(food.X * Settings.Width, food.Y * Settings.Height, Settings.Width, Settings.Height));
-                    }
+                    if (Settings.foodShape == "circle") { draw.FillEllipse(Settings.foodColor, new Rectangle(food.X * Settings.Width, food.Y * Settings.Height, Settings.Width, Settings.Height)); }
+                    else if (Settings.foodShape == "square") { draw.FillRectangle(Settings.foodColor, new Rectangle(food.X * Settings.Width, food.Y * Settings.Height, Settings.Width, Settings.Height)); }
+                    else { draw.FillEllipse(Settings.foodColor, new Rectangle(food.X * Settings.Width, food.Y * Settings.Height, Settings.Width, Settings.Height)); }
                         
 
                     //draw powerup
