@@ -33,6 +33,7 @@ namespace SnakeGame
             Settings.player2Name = player2nameTB.Text;
             player1highscoreLBL.Text = Highscore.GetHighScore(player1nameTB.Text) + "";
             player2highscoreLBL.Text = Highscore.GetHighScore(player2nameTB.Text) + "";
+            Highscore.addRecord(player1nameTB.Text);
         }
     }
 }

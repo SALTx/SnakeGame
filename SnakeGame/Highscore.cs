@@ -32,7 +32,7 @@ namespace SnakeGame
                 //close the database
                 Conn.Close();
 
-                cmd = new SQLiteCommand("INSERT INTO score VALUES('0', \"" + Settings.player1Name + "\")", Conn);
+                cmd = new SQLiteCommand("INSERT INTO score VALUES('0', \"" + name + "\")", Conn);
                 //open the database
                 Conn.Open();
                 cmd.ExecuteNonQuery();
@@ -44,7 +44,7 @@ namespace SnakeGame
             else
             {
                 Conn = new SQLiteConnection("Data Source=Highscoredb.sqlite;Version=3;");
-                cmd = new SQLiteCommand("SELECT Highscore FROM score WHERE Name = \"" + name + "\"", Conn);
+                cmd = new SQLiteCommand("SELECT Highscore FROM score WHERE Name = '" + name + "'", Conn);
                 Conn.Open();
                 cmd.ExecuteNonQuery();
 
@@ -59,18 +59,25 @@ namespace SnakeGame
             }
 
         }
-       
+       public static void addRecord(string name)
+        {
+            var conn = new SQLiteConnection("Data Source=Highscoredb.sqlite;Version=3;");
+            var cmd = new SQLiteCommand("INSERT INTO score (Name, Highscore) VALUES (" + "'" + name + "'" + ", 0);", conn);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
         //Checks whether the current score is the new high score or not
         //if the current score is the new High Score then Updates the High Score in database
         public static bool SetHighScore(string name, int score)
         {
-            int highScore = GetHighScore(Settings.player1Name);
+            int highScore = GetHighScore(name);
             SQLiteConnection Conn = new SQLiteConnection("Data Source=Highscoredb.sqlite;Version=3;"); ;
             SQLiteCommand cmd;
             //if the current score is greater than or equal to the High Score
             if (highScore <= score)
             {
-                cmd = new SQLiteCommand("UPDATE score SET Highscore=" + score.ToString() + " WHERE Name = \"" + name + "\"", Conn);
+                cmd = new SQLiteCommand("UPDATE score SET Highscore = " + score + " WHERE Name = \"" + name + "\"", Conn);
                 //open the database
                 Conn.Open();
                 cmd.ExecuteNonQuery();
