@@ -59,46 +59,7 @@ namespace SnakeGame
             }
 
         }
-        public static void AddNewRecord(string name)
-        {
-            SQLiteConnection Conn1;
-            SQLiteCommand cmd1;
-
-            string query = "INSERT INTO score VALUES(0, " + name + ");";
-            var conn = new SQLiteConnection("Data Source=Highscoredb.sqlite;Version=3;");
-            var cmd = new SQLiteCommand(query, conn);
-            
-            conn.Open();
-            cmd.ExecuteNonQuery();
-        }
-        public static void GetTopScores()
-        {
-            var names = new List<string>();
-            var scores = new List<int>();
-
-            SQLiteConnection Conn1;
-            SQLiteCommand cmd1;
-
-            string query = "SELECT Name, Highscore FROM score ORDER BY Highscore DESC";
-            var conn = new SQLiteConnection("Data Source=Highscoredb.sqlite;Version=3;");
-            var cmd = new SQLiteCommand(query, conn);
-            
-
-            conn.Open();
-            cmd.ExecuteNonQuery();
-
-            SQLiteDataReader reader = cmd.ExecuteReader();
-            string test;
-            test = "";
-            while (reader.Read())
-            {
-                test = Int32.Parse(reader["Highscore"].ToString()) + "";
-        
-            }
-            MessageBox.Show(test);
-            conn.Close();
-            return;
-        }
+       
         //Checks whether the current score is the new high score or not
         //if the current score is the new High Score then Updates the High Score in database
         public static bool SetHighScore(string name, int score)

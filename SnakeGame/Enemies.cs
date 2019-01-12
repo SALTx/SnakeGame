@@ -13,20 +13,6 @@ namespace SnakeGame
         public int Y { get; set; }
         public int difficulty { get; set; }
 
-
-        public void randomMove()
-        {
-            double move;
-
-            Random rand = new Random();
-
-            move = rand.Next();
-            this.X = (move > 0.5) ? this.X += 1 : this.X -= 1;
-
-            move = rand.Next();
-            this.Y = (move > 0.5) ? this.X += 1 : this.X -= 1;
-        }
-
         public void spawnEnemy()
         {
             //TODO

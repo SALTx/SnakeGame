@@ -95,6 +95,8 @@
             this.Controls.Add(this.prevBTN);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.previewBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Map";
             this.Text = "Map";
             ((System.ComponentModel.ISupportInitialize)(this.previewBox)).EndInit();

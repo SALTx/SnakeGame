@@ -22,7 +22,11 @@ namespace SnakeGame
                 bodyColorCB.Items.Add(colors[i]);
                 foodColorCB.Items.Add(colors[i]);
             }
+            headColorCB.Text = "Orange";
+            bodyColorCB.Text = "Yellow";
+            foodColorCB.Text = "Purple";
         }
+        
         private Brush changeColor(string color, Brush fallback)
         {
             Brush result;

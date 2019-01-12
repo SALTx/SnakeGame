@@ -194,10 +194,12 @@
             // foodShapeCircle
             // 
             this.foodShapeCircle.AutoSize = true;
+            this.foodShapeCircle.Checked = true;
             this.foodShapeCircle.Location = new System.Drawing.Point(47, 10);
             this.foodShapeCircle.Name = "foodShapeCircle";
             this.foodShapeCircle.Size = new System.Drawing.Size(51, 17);
             this.foodShapeCircle.TabIndex = 3;
+            this.foodShapeCircle.TabStop = true;
             this.foodShapeCircle.Text = "Circle";
             this.foodShapeCircle.UseVisualStyleBackColor = true;
             // 
@@ -233,10 +235,12 @@
             // snakeShapeCircle
             // 
             this.snakeShapeCircle.AutoSize = true;
+            this.snakeShapeCircle.Checked = true;
             this.snakeShapeCircle.Location = new System.Drawing.Point(47, 9);
             this.snakeShapeCircle.Name = "snakeShapeCircle";
             this.snakeShapeCircle.Size = new System.Drawing.Size(51, 17);
             this.snakeShapeCircle.TabIndex = 3;
+            this.snakeShapeCircle.TabStop = true;
             this.snakeShapeCircle.Text = "Circle";
             this.snakeShapeCircle.UseVisualStyleBackColor = true;
             // 
@@ -274,10 +278,12 @@
             // mediumRadio
             // 
             this.mediumRadio.AutoSize = true;
+            this.mediumRadio.Checked = true;
             this.mediumRadio.Location = new System.Drawing.Point(6, 63);
             this.mediumRadio.Name = "mediumRadio";
             this.mediumRadio.Size = new System.Drawing.Size(62, 17);
             this.mediumRadio.TabIndex = 1;
+            this.mediumRadio.TabStop = true;
             this.mediumRadio.Text = "Medium";
             this.mediumRadio.UseVisualStyleBackColor = true;
             // 
@@ -315,10 +321,12 @@
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
+            this.radioButton5.Checked = true;
             this.radioButton5.Location = new System.Drawing.Point(5, 18);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(39, 17);
             this.radioButton5.TabIndex = 2;
+            this.radioButton5.TabStop = true;
             this.radioButton5.Text = "On";
             this.radioButton5.UseVisualStyleBackColor = true;
             // 
@@ -396,6 +404,7 @@
             this.Controls.Add(this.appearanceGB);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "SettingsForm";
             this.Text = "SettingsForm";
             this.appearanceGB.ResumeLayout(false);
