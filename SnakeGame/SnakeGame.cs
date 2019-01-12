@@ -15,6 +15,7 @@ namespace SnakeGame
         private string deathCause = "You died for some unknown reason";
 
         public static TextureBrush test = new TextureBrush(Resources1.test_03);
+        public static Image background = Resources1.grassBackground_01;
 
         //sounds
         System.Media.SoundPlayer crunch = new System.Media.SoundPlayer(Resources1.crunch);
@@ -313,6 +314,10 @@ namespace SnakeGame
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             GameInput.ChangeState(e.KeyCode, true);
+            if(GameInput.PressedKey(Keys.U))
+            {
+                canvas.BackgroundImage = background;
+            }
         }
         
         private void Form1_KeyUp(object sender, KeyEventArgs e)

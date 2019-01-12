@@ -9,7 +9,7 @@ namespace SnakeGame
         This solution is an implementation of what I use on khanacademy
         but instead of an array im using a hashtable for keys
         */
-        private static Hashtable KeyTable = new Hashtable();
+        public static Hashtable KeyTable = new Hashtable();
 
         public static void ChangeState(Keys key, bool state) 
 {
