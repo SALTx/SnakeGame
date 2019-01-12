@@ -3,13 +3,13 @@ using System.Windows.Forms;
 
 namespace SnakeGame
 {
-    public class GameInput
+    public static class GameInput
     {
         /*
         This solution is an implementation of what I use on khanacademy
         but instead of an array im using a hashtable for keys
         */
-        public static Hashtable KeyTable = new Hashtable();
+        private static Hashtable KeyTable = new Hashtable();
 
         public static void ChangeState(Keys key, bool state) 
 {

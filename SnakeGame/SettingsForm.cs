@@ -15,17 +15,6 @@ namespace SnakeGame
         public SettingsForm()
         {
             InitializeComponent();
-            //foreach (System.Reflection.PropertyInfo prop in typeof(Color).GetProperties())
-            //{
-            //    if (prop.PropertyType.FullName == "System.Drawing.Color")
-            //    {
-            //        headColorCB.Items.Add(prop.Name);
-            //        bodyColorCB.Items.Add(prop.Name);
-            //        foodColorCB.Items.Add(prop.Name);
-            //    }
-            //}
-            /*This code adds all of the colors to the combo boxes but i am having a hard time turning the
-             string values into colors*/
             string[] colors = { "Red" , "Orange", "Yellow", "Green", "Blue", "Purple"};
             for(var i = 0; i < colors.Length; i++)
             {
@@ -50,11 +39,11 @@ namespace SnakeGame
         private void applyBTN_Click(object sender, EventArgs e)
         {
             //difficulty radio
-            string defaultDifficulty = SnakeGame.difficulty;
-            if (easyRadio.Checked) { SnakeGame.difficulty = "easy"; }
-            else if (mediumRadio.Checked) { SnakeGame.difficulty = "medium"; }
-            else if (hardRadio.Checked) { SnakeGame.difficulty = "hard"; }
-            else { SnakeGame.difficulty = defaultDifficulty; }
+            string defaultDifficulty = Settings.difficulty;
+            if (easyRadio.Checked) { Settings.difficulty = "easy"; }
+            else if (mediumRadio.Checked) { Settings.difficulty = "medium"; }
+            else if (hardRadio.Checked) { Settings.difficulty = "hard"; }
+            else { Settings.difficulty = defaultDifficulty; }
 
             //shapes
             if (snakeShapeCircle.Checked) { Settings.snakeShape = "circle"; }
@@ -68,11 +57,6 @@ namespace SnakeGame
             Settings.bodyColor = changeColor(bodyColorCB.Text, Settings.bodyColor);
             Settings.foodColor = changeColor(foodColorCB.Text, Settings.foodColor);
 
-            //change colors
-            //TypeConverter tc = new ColorConverter()
-            //Form1.headColor= (Brush)tc.ConvertFromString(bodyColorCB.Text);
-            //Form1.bodyColor = (Brush)tc.ConvertFromString(bodyColorCB.Text);
-            //Form1.foodColor = (Brush)tc.ConvertFromString(foodColorCB.Text);
             MessageBox.Show("Changes Applied");
         }
 

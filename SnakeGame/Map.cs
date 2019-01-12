@@ -23,21 +23,23 @@ namespace SnakeGame
 
         private void prevBTN_Click(object sender, EventArgs e)
         {
-            index = (index == 0) ? maps.Length - 1 : index - 1;
+            bool atStart = index == 0;
+            index = (atStart) ? maps.Length - 1 : index - 1;
             previewBox.BackgroundImage = images[index];
         }
 
         private void nextBTN_Click(object sender, EventArgs e)
         {
-            index = (index == maps.Length - 1) ? index = 0 : index + 1;
+            bool atEnd = index == maps.Length - 1;
+            index = (atEnd) ? index = 0 : index + 1;
             previewBox.BackgroundImage = images[index];
         }
 
         private void updateBTN_Click(object sender, EventArgs e)
         {
             //TODO
-            SnakeGame.background = previewBox.BackgroundImage;
-            GameInput.KeyTable[Keys.U] = true;
+            SnakeGame.changeBackground(previewBox.BackgroundImage);
+            GameInput.ChangeState(Keys.U, true);
             MessageBox.Show("Background has been updated, close this window to apply changes");
         }
     }

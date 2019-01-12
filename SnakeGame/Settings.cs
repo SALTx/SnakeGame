@@ -36,7 +36,30 @@ namespace SnakeGame
         public static string player1Name { get; set; }
         public static string player2Name { get; set; }
 
-        public Settings(string difficulty)
+        public Settings()
+        {
+            difficulty = "medium";
+            Speed = 15;
+            Points = 110;
+            enemySpawnRate = 0.4;
+            powerupSpawnRate = 0.3;
+            headColor = Brushes.Orange;
+            bodyColor = Brushes.Yellow;
+            foodColor = Brushes.Purple;
+            snakeShape = "circle";
+            foodShape = "circle";
+            Score = 0;
+            Width = 16;
+            Height = 16;
+            IsGameOver = false;
+            InGameDirection = Direction.Right;
+            enemyEnabled = false;
+            powerupEnabled = false;
+            IsGamePaused = false;
+            player1Name = "Player 1";
+            player2Name = "Player 2";
+        }
+        public void resetGame()
         {
             switch(difficulty)
             {
@@ -66,24 +89,6 @@ namespace SnakeGame
                     powerupSpawnRate = 0.5;
                     break;
             }
-            headColor = Brushes.Orange;
-            bodyColor = Brushes.Yellow;
-            foodColor = Brushes.Purple;
-            snakeShape = "circle";
-            foodShape = "circle";
-            Score = 0;
-            Width = 16;
-            Height = 16;
-            IsGameOver = false;
-            InGameDirection = Direction.Right;
-            enemyEnabled = false;
-            powerupEnabled = false;
-            IsGamePaused = false;
-            player1Name = "Player 1";
-            player2Name = "Player 2";
-        }
-        public void resetGame()
-        {
             Score = 0;
             IsGameOver = false;
             InGameDirection = Direction.Right;

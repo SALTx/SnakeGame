@@ -16,10 +16,15 @@ namespace SnakeGame
 
         public void randomMove()
         {
+            double move;
+
             Random rand = new Random();
 
-            this.X = (rand.Next() > 0.5) ? this.X += 1 : this.X -= 1;
-            this.Y = (rand.Next() > 0.5) ? this.X += 1 : this.X -= 1;
+            move = rand.Next();
+            this.X = (move > 0.5) ? this.X += 1 : this.X -= 1;
+
+            move = rand.Next();
+            this.Y = (move > 0.5) ? this.X += 1 : this.X -= 1;
         }
 
         public void spawnEnemy()

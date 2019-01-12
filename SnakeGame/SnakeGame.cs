@@ -8,26 +8,26 @@ namespace SnakeGame
 {
     public partial class SnakeGame : Form
     {
-        private List<Shape> Snake = new List<Shape>();
+        private readonly List<Shape> Snake = new List<Shape>();
         private Shape food = new Shape();
         private Powerup powerup = new Powerup() { X = -10, Y = -10 };
 
         private string deathCause = "You died for some unknown reason";
 
-        public static TextureBrush test = new TextureBrush(Resources1.test_03);
-        public static Image background = Resources1.grassBackground_01;
+        private static TextureBrush test = new TextureBrush(Resources1.test_03);
+        private static Image background = Resources1.grassBackground_01;
+
 
         //sounds
-        System.Media.SoundPlayer crunch = new System.Media.SoundPlayer(Resources1.crunch);
-        System.Media.SoundPlayer die = new System.Media.SoundPlayer(Resources1.The_Game_Over_1);
-        System.Media.SoundPlayer extraPoints = new System.Media.SoundPlayer(Resources1.powerup);
+        readonly System.Media.SoundPlayer crunch = new System.Media.SoundPlayer(Resources1.crunch);
+        readonly System.Media.SoundPlayer die = new System.Media.SoundPlayer(Resources1.The_Game_Over_1);
+        readonly System.Media.SoundPlayer extraPoints = new System.Media.SoundPlayer(Resources1.powerup);
 
-        public static string difficulty = "easy";
 
-        private SettingsForm settings;
-        private ProfileForm profiles;
-        private Map maps;
-        private Settings setup = new Settings(difficulty);
+        readonly private SettingsForm settings;
+        readonly private ProfileForm profiles;
+        readonly private Map maps;
+        readonly private Settings setup = new Settings();
 
         public SnakeGame()
         {
@@ -47,6 +47,11 @@ namespace SnakeGame
 
             //i want to play a sound when the game starts
 
+        }
+
+        public static void changeBackground(Image i)
+        {
+            background = i;
         }
 
         private void StartGame()
@@ -347,10 +352,6 @@ namespace SnakeGame
         {
             Settings.IsGamePaused = true;
             maps.ShowDialog();
-        }
-        public static void changeMap(Bitmap image)
-        {
-            //canvas.BackgroundImage = image;
         }
     }
 }
