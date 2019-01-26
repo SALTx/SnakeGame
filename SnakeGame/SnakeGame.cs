@@ -8,7 +8,7 @@ namespace SnakeGame
 {
     public partial class SnakeGame : Form
     {
-        private readonly List<Shape> Snake = new List<Shape>();
+        private static List<Shape> Snake = new List<Shape>();
         private Shape food = new Shape();
         private Powerup powerup = new Powerup() { X = -10, Y = -10 };
 
@@ -48,7 +48,12 @@ namespace SnakeGame
             //i want to play a sound when the game starts
 
         }
-
+        public void cutSnake()
+        {
+            int len = Snake.Count;
+            if (len > 1)
+                Snake.RemoveAt(len - 1);
+        }
         public static void changeBackground(Image i)
         {
             background = i;
@@ -97,7 +102,7 @@ namespace SnakeGame
                 }
                 if (GameInput.PressedKey(Keys.K))
                 {
-                    //do nothing
+                    cutSnake();
                 }
 
                 //move when unpaused

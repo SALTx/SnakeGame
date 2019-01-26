@@ -13,9 +13,13 @@ namespace SnakeGame
         public int X { get; set; }
         public int Y { get; set; }
 
-        public void spawnPowerup()
+        public void getPoints()
         {
-            //TODO
+            Settings.Score += 500;
+        }
+        public void getShort()
+        {
+
         }
         /*
          Ideas for powerups
