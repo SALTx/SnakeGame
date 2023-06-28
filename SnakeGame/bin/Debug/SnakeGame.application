@@ -4,17 +4,17 @@
   <description asmv2:publisher="SnakeGame" asmv2:product="SnakeGame" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" />
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
-    <framework targetVersion="4.5.2" profile="Full" supportedRuntime="4.0.30319" />
+    <framework targetVersion="4.8" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="SnakeGame.exe.manifest" size="4564">
+    <dependentAssembly dependencyType="install" codebase="SnakeGame.exe.manifest" size="4562">
       <assemblyIdentity name="SnakeGame.exe" version="1.0.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>WI4Ajsc5nn87tXqEDxRn7fN4b1AvBhjIc9WTDi+ny1s=</dsig:DigestValue>
+        <dsig:DigestValue>ZlY9EHmRfC/G66NUF7VKbj46w8+fNaWlqkamHgL6Pjw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
