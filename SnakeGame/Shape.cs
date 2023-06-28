@@ -1,6 +1,4 @@
-﻿    using System.Drawing;
-
-namespace SnakeGame
+﻿namespace SnakeGame
 {
     public class Shape
     {

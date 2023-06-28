@@ -61,7 +61,7 @@ namespace SnakeGame
         }
         public void resetGame()
         {
-            switch(difficulty)
+            switch (difficulty)
             {
                 case "easy":
                     Speed = 12;

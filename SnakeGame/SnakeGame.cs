@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Media;
 
 namespace SnakeGame
 {
@@ -33,13 +32,13 @@ namespace SnakeGame
         {
             InitializeComponent();
             //Default settings
-            
+
             settings = new SettingsForm();
             profiles = new ProfileForm();
             maps = new Map();
 
-        //for starting the timer and setting the timer interval for tick
-        GameTimer.Interval = 1000 / Settings.Speed;
+            //for starting the timer and setting the timer interval for tick
+            GameTimer.Interval = 1000 / Settings.Speed;
             GameTimer.Tick += UpdateScreen;
             GameTimer.Start();
 
@@ -66,15 +65,12 @@ namespace SnakeGame
 
             //Default settings
             setup.resetGame();
-
             Snake.Clear();
 
             Shape head = new Shape { X = 0, Y = 0 };
-            //default start for game
             Snake.Add(head);
-
             score_l.Text = Settings.Score.ToString();
-            
+
             CreateFood();
         }
 
@@ -93,8 +89,6 @@ namespace SnakeGame
             }
             else
             {
-
-                //(()or())and()
                 if (GameInput.PressedKey(Keys.Space))
                 {
                     Settings.IsGamePaused = !Settings.IsGamePaused;
@@ -115,11 +109,11 @@ namespace SnakeGame
                     else if ((GameInput.PressedKey(Keys.Left) || (GameInput.PressedKey(Keys.A))) && Settings.InGameDirection != Direction.Right)
                     {
                         Settings.InGameDirection = Direction.Left;
-                    }  
+                    }
                     else if ((GameInput.PressedKey(Keys.Up) || (GameInput.PressedKey(Keys.W))) && Settings.InGameDirection != Direction.Down)
                     {
                         Settings.InGameDirection = Direction.Up;
-                    }    
+                    }
                     else if ((GameInput.PressedKey(Keys.Down) || (GameInput.PressedKey(Keys.S))) && Settings.InGameDirection != Direction.Up)
                     {
                         Settings.InGameDirection = Direction.Down;
@@ -127,7 +121,6 @@ namespace SnakeGame
                     MoveSnake(Snake);
                 }
             }
-
 
             canvas.Invalidate();
         }
@@ -258,17 +251,17 @@ namespace SnakeGame
         }
         private void eatPowerup(string p)
         {
-                if (p == "extraPoints")
-                {
-                    extraPoints.Play();
-                    Settings.Score += 500;
-                    score_l.Text = Settings.Score.ToString();
-                    highscoreLBL.Text = Highscore.GetHighScore(Settings.player1Name).ToString();
-                }
-                if (p == "shortenSnake")
-                {
-                    //TODO
-                }
+            if (p == "extraPoints")
+            {
+                extraPoints.Play();
+                Settings.Score += 500;
+                score_l.Text = Settings.Score.ToString();
+                highscoreLBL.Text = Highscore.GetHighScore(Settings.player1Name).ToString();
+            }
+            if (p == "shortenSnake")
+            {
+                //TODO
+            }
             powerup.X = -100;
             powerup.Y = -100;
         }
@@ -293,13 +286,13 @@ namespace SnakeGame
                     //For drawing the snake
                     if (Settings.snakeShape == "circle") { draw.FillEllipse(SnakeColour, new Rectangle(Snake[i].X * Settings.Width, Snake[i].Y * Settings.Height, Settings.Width, Settings.Height)); }
                     else if (Settings.snakeShape == "square") { draw.FillRectangle(SnakeColour, new Rectangle(Snake[i].X * Settings.Width, Snake[i].Y * Settings.Height, Settings.Width, Settings.Height)); }
-                        
+
                     //For drawing the food
                     if (Settings.foodShape == "circle") { draw.FillEllipse(Settings.foodColor, new Rectangle(food.X * Settings.Width, food.Y * Settings.Height, Settings.Width, Settings.Height)); }
                     else if (Settings.foodShape == "square") { draw.FillRectangle(Settings.foodColor, new Rectangle(food.X * Settings.Width, food.Y * Settings.Height, Settings.Width, Settings.Height)); }
 
                     //draw powerup
-                    
+
                     draw.FillRectangle(test, new Rectangle(powerup.X * Settings.Width, powerup.Y * Settings.Height, Settings.Width, Settings.Height));
                 }
             }
@@ -324,12 +317,12 @@ namespace SnakeGame
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             GameInput.ChangeState(e.KeyCode, true);
-            if(GameInput.PressedKey(Keys.U))
+            if (GameInput.PressedKey(Keys.U))
             {
                 canvas.BackgroundImage = background;
             }
         }
-        
+
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
             GameInput.ChangeState(e.KeyCode, false);
