@@ -38,7 +38,7 @@ namespace SnakeGame
         private void updateBTN_Click(object sender, EventArgs e)
         {
             //TODO
-            SnakeGame.changeBackground(previewBox.BackgroundImage);
+            SnakeGame.ChangeBackground(previewBox.BackgroundImage);
             GameInput.ChangeState(Keys.U, true);
             MessageBox.Show("Background has been updated, close this window to apply changes");
         }
